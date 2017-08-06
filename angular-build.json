@@ -12,15 +12,15 @@
         {
           "tsconfig": "tsconfig.json",
           "target": "es2015",
-          "copyTemplateAndStyleUrls": true,
-          "inlineMetaDataResources": true,
+          "copyTemplateAndStyleUrls": false,
+          "inlineMetaDataResources": false,
           "outDir": "es2015"
         },
         {
           "tsconfig": "tsconfig.json",
           "target": "es5",
-          "copyTemplateAndStyleUrls": true,
-          "inlineMetaDataResources": true,
+          "copyTemplateAndStyleUrls": false,
+          "inlineMetaDataResources": false,
           "outDir": ""
         }
       ],
