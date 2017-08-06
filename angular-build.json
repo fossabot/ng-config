@@ -2,7 +2,7 @@
   "$schema": "node_modules/@bizappframework/angular-build/schemas/schema-draft-04.json#",
   "libs": [
     {
-      "srcDir": "packages/ng-config",
+      "srcDir": "libs/ng-config",
       "outDir": "dist/packages/ng-config",
       "assets": [
         "../../LICENSE",
@@ -12,15 +12,15 @@
         {
           "tsconfig": "tsconfig.json",
           "target": "es2015",
-          "copyTemplateAndStyleUrls": false,
-          "inlineMetaDataResources": false,
+          "copyTemplateAndStyleUrls": true,
+          "inlineMetaDataResources": true,
           "outDir": "es2015"
         },
         {
           "tsconfig": "tsconfig.json",
           "target": "es5",
-          "copyTemplateAndStyleUrls": false,
-          "inlineMetaDataResources": false,
+          "copyTemplateAndStyleUrls": true,
+          "inlineMetaDataResources": true,
           "outDir": ""
         }
       ],
@@ -63,7 +63,7 @@
       "banner": "banner.txt"
     },
     {
-      "srcDir": "packages/ng-config-http-loader",
+      "srcDir": "libs/ng-config-http-loader",
       "outDir": "dist/packages/ng-config-http-loader",
       "assets": [
         "../../LICENSE",
@@ -73,15 +73,15 @@
         {
           "tsconfig": "tsconfig.json",
           "target": "es2015",
-          "copyTemplateAndStyleUrls": false,
-          "inlineMetaDataResources": false,
+          "copyTemplateAndStyleUrls": true,
+          "inlineMetaDataResources": true,
           "outDir": "es2015"
         },
         {
           "tsconfig": "tsconfig.json",
           "target": "es5",
-          "copyTemplateAndStyleUrls": false,
-          "inlineMetaDataResources": false,
+          "copyTemplateAndStyleUrls": true,
+          "inlineMetaDataResources": true,
           "outDir": ""
         }
       ],

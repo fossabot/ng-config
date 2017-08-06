@@ -1,0 +1,55 @@
+﻿{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noImplicitThis": true,
+    "suppressImplicitAnyIndexErrors": true,
+    //"noUnusedParameters": true,
+    "strictNullChecks": true,
+    "stripInternal": true,
+
+    "importHelpers": true,
+
+    "declaration": true,
+    "removeComments": true,
+    "newLine": "LF",
+
+    "sourceMap": true,
+    "inlineSources": true,
+
+    "skipLibCheck": true,
+    "lib": [ "es2015", "dom" ],
+    "types": [],
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "@angular/core": [ "../../node_modules/@angular/core" ],
+      "@angular/http": [ "../../node_modules/@angular/http" ],
+      "@angular/platform-browser": [ "../../node_modules/@angular/platform-browser" ],
+      "rxjs/*": [ "../../node_modules/rxjs/*" ],
+      "@bizappframework/ng-config": [ "../../dist/packages/ng-config" ]
+    },
+    "outDir": "../../dist/packages/ng-config-http-loader"
+  },
+  "files": [
+    "index.ts"
+  ],
+  "angularCompilerOptions": {
+    "genDir": "../../dist/packages/ng-config-http-loader",
+    "annotateForClosureCompiler": true,
+    "annotationsAs": "static fields",
+    "strictMetadataEmit": true,
+
+    //"flatModuleOutFile": "index.js",
+    //"flatModuleId": "@bizappframework/ng-config",
+    "skipTemplateCodegen": true
+  }
+}

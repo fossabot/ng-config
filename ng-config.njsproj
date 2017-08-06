@@ -49,31 +49,31 @@
     <Content Include="banner.txt" />
     <Content Include="LICENSE" />
     <Content Include="package.json" />
-    <Content Include="packages\ng-config-http-loader\package.json" />
-    <Content Include="packages\ng-config-http-loader\README.md" />
-    <Content Include="packages\ng-config-http-loader\tsconfig.json" />
-    <Content Include="packages\ng-config\package.json" />
-    <Content Include="packages\ng-config\README.md" />
+    <Content Include="libs\ng-config-http-loader\package.json" />
+    <Content Include="libs\ng-config-http-loader\README.md" />
+    <Content Include="libs\ng-config-http-loader\tsconfig.json" />
+    <Content Include="libs\ng-config\package.json" />
+    <Content Include="libs\ng-config\README.md" />
+    <Content Include="libs\ng-config\tsconfig.json" />
     <Content Include="README.md" />
-    <Content Include="packages\ng-config\tsconfig.json" />
     <Content Include="tsconfig.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="packages\" />
-    <Folder Include="packages\ng-config-http-loader\" />
-    <Folder Include="packages\ng-config-http-loader\src\" />
-    <Folder Include="packages\ng-config\" />
-    <Folder Include="packages\ng-config\src\" />
+    <Folder Include="libs\" />
+    <Folder Include="libs\ng-config-http-loader\" />
+    <Folder Include="libs\ng-config-http-loader\src\" />
+    <Folder Include="libs\ng-config\" />
+    <Folder Include="libs\ng-config\src\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="packages\ng-config-http-loader\index.ts" />
-    <TypeScriptCompile Include="packages\ng-config-http-loader\src\config.http-loader.ts" />
-    <TypeScriptCompile Include="packages\ng-config-http-loader\src\index.ts" />
-    <TypeScriptCompile Include="packages\ng-config\index.ts" />
-    <TypeScriptCompile Include="packages\ng-config\src\config.loader.ts" />
-    <TypeScriptCompile Include="packages\ng-config\src\config.pipe.ts" />
-    <TypeScriptCompile Include="packages\ng-config\src\config.service.ts" />
-    <TypeScriptCompile Include="packages\ng-config\src\index.ts" />
+    <TypeScriptCompile Include="libs\ng-config-http-loader\index.ts" />
+    <TypeScriptCompile Include="libs\ng-config-http-loader\src\config.http-loader.ts" />
+    <TypeScriptCompile Include="libs\ng-config-http-loader\src\index.ts" />
+    <TypeScriptCompile Include="libs\ng-config\index.ts" />
+    <TypeScriptCompile Include="libs\ng-config\src\config.loader.ts" />
+    <TypeScriptCompile Include="libs\ng-config\src\config.pipe.ts" />
+    <TypeScriptCompile Include="libs\ng-config\src\config.service.ts" />
+    <TypeScriptCompile Include="libs\ng-config\src\index.ts" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

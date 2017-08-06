@@ -25,7 +25,7 @@
     "types": [],
     "outDir": "dist"
     "paths": {
-      "@bizappframework/ng-config": [ "packages/ng-config/index.ts" ]
+      "@bizappframework/ng-config": [ "libs/ng-config/index.ts" ]
     }
   },
   "compileOnSave": false
