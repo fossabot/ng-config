@@ -1,0 +1,25 @@
+{
+  "name": "bizappframework-ng-config",
+  "version": "1.0.0-beta.3",
+  "description": "Contains configuration service libraries for Angular app.",
+  "keywords": [
+    "angular",
+    "app",
+    "config",
+    "configuration",
+    "settings",
+    "service"
+  ],
+  "author": "BizAppFramework Team",
+  "license": "MIT",
+  "repository": "https://github.com/bizappframework/ng-config.git",
+  "homepage": "https://github.com/bizappframework/ng-config",
+  "devDependencies": {
+    "@angular/core": "~4.3.3",
+    "@angular/http": "^4.3.3",
+    "@angular/platform-browser": "^4.3.3",
+    "rxjs": "^5.4.2",
+    "tslib": "^1.7.1",
+    "zone.js": "^0.8.16"
+  }
+}

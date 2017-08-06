@@ -1,0 +1,127 @@
+{
+  "$schema": "node_modules/@bizappframework/angular-build/schemas/schema-draft-04.json#",
+  "libs": [
+    {
+      "srcDir": "packages/ng-config",
+      "outDir": "dist/packages/ng-config",
+      "assets": [
+        "../../LICENSE",
+        "README.md"
+      ],
+      "tsTranspilations": [
+        {
+          "tsconfig": "tsconfig.json",
+          "target": "es2015",
+          "copyTemplateAndStyleUrls": false,
+          "inlineMetaDataResources": false,
+          "outDir": "es2015"
+        },
+        {
+          "tsconfig": "tsconfig.json",
+          "target": "es5",
+          "copyTemplateAndStyleUrls": false,
+          "inlineMetaDataResources": false,
+          "outDir": ""
+        }
+      ],
+      "bundleTargets": [
+        {
+          "name": "esm-es2015",
+          "entry": "index.js",
+          "entryResolution": {
+            "entryRoot": "tsTranspilationOutDir"
+          },
+          "libraryTarget": "es",
+          "outDir": "bundles",
+          "inlineResources": true
+        },
+        {
+          "name": "esm-es5",
+          "entryResolution": {
+            "entryRoot": "bundleTargetOutDir"
+          },
+          "libraryTarget": "es",
+          "outDir": "bundles",
+          "inlineResources": false,
+          "addPureAnnotations": true,
+          "transformScriptTargetOnly": true,
+          "scriptTarget": "es5"
+        },
+        {
+          "name": "umd-es5",
+          "entryResolution": {
+            "entryRoot": "bundleTargetOutDir"
+          },
+          "libraryTarget": "umd",
+          "outDir": "bundles",
+          "inlineResources": false
+        }
+      ],
+      "packageOptions": {
+        "packageConfigFile": "package.json"
+      },
+      "banner": "banner.txt"
+    },
+    {
+      "srcDir": "packages/ng-config-http-loader",
+      "outDir": "dist/packages/ng-config-http-loader",
+      "assets": [
+        "../../LICENSE",
+        "README.md"
+      ],
+      "tsTranspilations": [
+        {
+          "tsconfig": "tsconfig.json",
+          "target": "es2015",
+          "copyTemplateAndStyleUrls": false,
+          "inlineMetaDataResources": false,
+          "outDir": "es2015"
+        },
+        {
+          "tsconfig": "tsconfig.json",
+          "target": "es5",
+          "copyTemplateAndStyleUrls": false,
+          "inlineMetaDataResources": false,
+          "outDir": ""
+        }
+      ],
+      "bundleTargets": [
+        {
+          "name": "esm-es2015",
+          "entry": "index.js",
+          "entryResolution": {
+            "entryRoot": "tsTranspilationOutDir"
+          },
+          "libraryTarget": "es",
+          "outDir": "bundles",
+          "inlineResources": true
+        },
+        {
+          "name": "esm-es5",
+          "entryResolution": {
+            "entryRoot": "bundleTargetOutDir"
+          },
+          "libraryTarget": "es",
+          "outDir": "bundles",
+          "inlineResources": false,
+          "addPureAnnotations": true,
+          "transformScriptTargetOnly": true,
+          "scriptTarget": "es5"
+        },
+        {
+          "name": "umd-es5",
+          "entryResolution": {
+            "entryRoot": "bundleTargetOutDir"
+          },
+          "libraryTarget": "umd",
+          "outDir": "bundles",
+          "inlineResources": false
+        }
+      ],
+      "packageOptions": {
+        "packageConfigFile": "package.json"
+      },
+      "banner": "banner.txt"
+    }
+  ]
+}
