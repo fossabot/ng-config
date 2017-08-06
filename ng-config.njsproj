@@ -46,6 +46,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="angular-build.json" />
     <Content Include="banner.txt" />
     <Content Include="LICENSE" />
     <Content Include="package.json" />
