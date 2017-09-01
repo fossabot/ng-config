@@ -1,0 +1,17 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "module": "es2015",
+    "types": [ "node" ],
+
+    "rootDir": ".",
+    "baseUrl": ".",
+
+    "paths": {
+      "@bizappframework/ng-config": [ "../../../src/ng-config/libs/ng-config" ],
+      "@bizappframework/ng-config-http-loader": [ "../../../src/ng-config/libs/ng-config-http-loader" ],
+      "@bizappframework/ng-config-ngrx-store": [ "../../../src/ng-config/libs/ng-config-ngrx-store" ]
+    }
+  }
+}

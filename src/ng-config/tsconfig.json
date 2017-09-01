@@ -1,0 +1,38 @@
+﻿{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "stripInternal": true,
+
+    "importHelpers": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "inlineSources": true,
+    "declaration": true,
+    "skipLibCheck": true,
+
+    "lib": [ "es2016", "dom" ],
+    "types": [],
+    "outDir": "dist",
+
+    "baseUrl": "",
+    "rootDir": "./",
+
+    "paths": {
+      "@bizappframework/ng-config": [ "./libs/ng-config" ],
+      "@bizappframework/ng-config-http-loader": [ "./libs/ng-config-http-loader" ],
+      "@bizappframework/ng-config-ngrx-store": [ "./libs/ng-config-ngrx-store" ]
+    }
+  },
+  "compileOnSave": false
+}

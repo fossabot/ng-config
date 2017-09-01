@@ -1,0 +1,31 @@
+{
+  "$schema": "node_modules/@bizappframework/angular-build/schemas/schema-draft-04.json#",
+  "apps": [
+    {
+      "name": "browser-app",
+      "platformTarget": "web",
+      "srcDir": "ClientApp",
+      "outDir": "wwwroot",
+      "entry": "main.browser.ts",
+      "tsconfig": "tsconfig.json",
+      "polyfills": [
+        "core-js/es6/reflect",
+        "core-js/es7/reflect",
+        "zone.js/dist/zone"
+      ],
+      "publicPath": "/",
+      "htmlInjectOptions": {
+        "scriptsOut": "../Views/Shared/_ScriptsPartial.cshtml",
+        "stylesOut": "../Views/Shared/_StylesPartial.cshtml",
+        "iconsOut": "../Views/Shared/_FaviconsPartial.cshtml",
+        "resourceHintsOut": "../Views/Shared/_ResourceHintsPartial.cshtml",
+        "customLinkAttributes": {
+          "asp-append-version": "true"
+        },
+        "customScriptAttributes": {
+          "asp-append-version": "true"
+        }
+      }
+    }
+  ]
+}

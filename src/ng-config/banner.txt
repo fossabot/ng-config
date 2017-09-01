@@ -1,0 +1,8 @@
+/**
+ * @license
+ * Copyright (c) $CURRENT_YEAR$ Octalhouse.
+ *
+ * $PACKAGE_NAME$@$PACKAGE_VERSION$
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://github.com/BizAppFramework/ng-config/blob/master/LICENSE
+ */

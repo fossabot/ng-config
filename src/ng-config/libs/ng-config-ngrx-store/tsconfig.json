@@ -1,0 +1,48 @@
+﻿{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitThis": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "strictNullChecks": true,
+    "stripInternal": true,
+    "importHelpers": true,
+    "declaration": true,
+    "sourceMap": true,
+    "inlineSources": true,
+    "skipLibCheck": true,
+    "lib": [ "es2016", "dom" ],
+    "types": [],
+
+    "rootDir": ".",
+    "baseUrl": ".",
+
+    "paths": {
+      "@angular/core": [ "../../node_modules/@angular/core" ],
+      "@ngrx/store": [ "../../node_modules/@ngrx/store" ],
+      "rxjs/*": [ "../../node_modules/rxjs/*" ],
+      "@bizappframework/ng-config": [ "../../dist/packages/ng-config" ]
+    },
+
+    "outDir": "../../dist/packages/ng-config-ngrx-store"
+  },
+  "files": [
+    "public_api.ts"
+  ],
+  "angularCompilerOptions": {
+    "genDir": "../../dist/packages/ng-config-ngrx-store",
+    "annotateForClosureCompiler": true,
+    "strictMetadataEmit": true,
+    "skipTemplateCodegen": true,
+    // "annotationsAs": "static fields",
+    "flatModuleOutFile": "index.js",
+    "flatModuleId": "@bizappframework/ng-config-ngrx-store"
+  }
+}

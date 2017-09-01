@@ -1,9 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ng-config", "ng-config.njsproj", "{EC98B1AE-AD08-4533-9942-FBD676A65402}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{27A12972-58FF-4420-955D-0CC837EC438E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{F514E443-BCF4-4139-9C5C-D0123A45F1D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ng-config-aspnetcore-sample", "samples\ng-config-aspnetcore-sample\ng-config-aspnetcore-sample.csproj", "{15112CE8-FDC7-4FA2-A96F-3B2F47A5F3B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3BBAB1C3-0D14-4A19-A494-37F4B1B9A472}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ng-config", "src\ng-config\ng-config.njsproj", "{EC98B1AE-AD08-4533-9942-FBD676A65402}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,6 +25,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15112CE8-FDC7-4FA2-A96F-3B2F47A5F3B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15112CE8-FDC7-4FA2-A96F-3B2F47A5F3B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15112CE8-FDC7-4FA2-A96F-3B2F47A5F3B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15112CE8-FDC7-4FA2-A96F-3B2F47A5F3B9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EC98B1AE-AD08-4533-9942-FBD676A65402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EC98B1AE-AD08-4533-9942-FBD676A65402}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC98B1AE-AD08-4533-9942-FBD676A65402}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -18,5 +36,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{15112CE8-FDC7-4FA2-A96F-3B2F47A5F3B9} = {F514E443-BCF4-4139-9C5C-D0123A45F1D8}
+		{EC98B1AE-AD08-4533-9942-FBD676A65402} = {27A12972-58FF-4420-955D-0CC837EC438E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D251B19C-2810-4AF6-8BB9-7877E5DD1127}
 	EndGlobalSection
 EndGlobal

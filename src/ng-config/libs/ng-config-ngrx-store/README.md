@@ -1,0 +1,2 @@
+ng-config-ngrx-store
+=====================
