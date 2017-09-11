@@ -22,9 +22,12 @@
     "types": [],
 
     "baseUrl": ".",
-    "rootDir": ".",
+    "rootDir": "./",
     "paths": {
-      "@bizappframework/*": [ "../../modules/*" ]
+      "@bizappframework/*": [ "./*" ],
+      "@angular/*": [ "../node_modules/@angular/*" ],
+      "@nrgx/*": [ "../node_modules/@ngrx/*" ],
+      "rxjs/*": [ "../node_modules/rxjs/*" ]
     },
     "outDir": "../dist"
   }

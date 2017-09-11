@@ -1,7 +1,0 @@
-{
-  "name": "@bizappframework/ng-config",
-  "version": "0.0.0",
-  "peerDependencies": {
-    "@angular/core": ">=4.0.0"
-  }
-}

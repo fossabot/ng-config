@@ -1,0 +1,25 @@
+{
+  "name": "@bizappframework/ng-config-ngrx-store",
+  "version": "0.0.0",
+  "description": "Contains ngrx-store wrapper for @bizappframework/ng-config.",
+  "keywords": [
+    "angular",
+    "app",
+    "config",
+    "ngrx-store",
+    "loader",
+    "configuration",
+    "settings"
+  ],
+  "author": "",
+  "license": "",
+  "repository": "",
+  "dependencies": {
+    "tslib": "^1.7.1"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=4.3.0",
+    "@bizappframework/ng-config": "^1.0.0-beta.5",
+    "@ngrx/store": ">=4.0.0"
+  }
+}

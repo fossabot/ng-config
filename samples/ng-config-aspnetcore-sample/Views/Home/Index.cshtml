@@ -1,11 +1,4 @@
-@if (ViewData["PreRenderEnabled"] is bool && (bool)ViewData["PreRenderEnabled"])
-{
-    @Html.Raw(ViewData["SpaHtml"])
-}
-else
-{
-    <app></app>
-}
+<app></app>
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ScriptsPartial"); }
 }

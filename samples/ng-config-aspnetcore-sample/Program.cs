@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace ng_config_aspnetcore_sample
 {
-    public class Program
+    public static class Program
     {
         public static void Main(string[] args)
         {
