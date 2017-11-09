@@ -7,7 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{F514
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ng-config-aspnetcore-sample", "samples\ng-config-aspnetcore-sample\ng-config-aspnetcore-sample.csproj", "{15112CE8-FDC7-4FA2-A96F-3B2F47A5F3B9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "~root", "~root", "{3BBAB1C3-0D14-4A19-A494-37F4B1B9A472}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "modules", "modules\modules.njsproj", "{863EA7D6-5337-4091-A7DC-F884F0A27CD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9AC5F167-D51F-403E-99E0-F9802D272EDC}"
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
@@ -16,9 +18,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "~root", "~root", "{3BBAB1C3
 		LICENSE = LICENSE
 		package.json = package.json
 		README.md = README.md
+		tsconfig.json = tsconfig.json
 	EndProjectSection
 EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "modules", "modules\modules.njsproj", "{863EA7D6-5337-4091-A7DC-F884F0A27CD0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "spec", "spec", "{7C30421F-4887-45BD-B0C6-1D60E32CB03F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "support", "support", "{0A6296F8-7F24-4D9E-9B80-301061922986}"
+	ProjectSection(SolutionItems) = preProject
+		spec\support\jasmine.json = spec\support\jasmine.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "helpers", "helpers", "{0E162D17-D56F-4103-A8D0-E5ED41A8D36E}"
+	ProjectSection(SolutionItems) = preProject
+		spec\helpers\spec-polyfills.ts = spec\helpers\spec-polyfills.ts
+		spec\helpers\spec-test.browser.ts = spec\helpers\spec-test.browser.ts
+		spec\helpers\spec-test.server.ts = spec\helpers\spec-test.server.ts
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +55,9 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{15112CE8-FDC7-4FA2-A96F-3B2F47A5F3B9} = {F514E443-BCF4-4139-9C5C-D0123A45F1D8}
+		{7C30421F-4887-45BD-B0C6-1D60E32CB03F} = {9AC5F167-D51F-403E-99E0-F9802D272EDC}
+		{0A6296F8-7F24-4D9E-9B80-301061922986} = {7C30421F-4887-45BD-B0C6-1D60E32CB03F}
+		{0E162D17-D56F-4103-A8D0-E5ED41A8D36E} = {7C30421F-4887-45BD-B0C6-1D60E32CB03F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D251B19C-2810-4AF6-8BB9-7877E5DD1127}

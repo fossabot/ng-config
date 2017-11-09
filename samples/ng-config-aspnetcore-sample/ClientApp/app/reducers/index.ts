@@ -1,11 +1,10 @@
 ﻿import {
     ActionReducerMap,
     ActionReducer,
-    MetaReducer,
+    MetaReducer
 } from '@ngrx/store';
 
 import { configReducer, ConfigState } from '@bizappframework/ng-config-ngrx-store';
-
 
 export interface State {
     config: ConfigState;

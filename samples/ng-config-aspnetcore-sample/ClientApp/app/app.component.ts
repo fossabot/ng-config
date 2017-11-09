@@ -7,7 +7,6 @@ import { ConfigService } from '@bizappframework/ng-config';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-
     constructor(private readonly configService: ConfigService) { }
 
     get configJson(): string {

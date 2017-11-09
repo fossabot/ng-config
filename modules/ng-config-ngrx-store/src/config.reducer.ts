@@ -1,5 +1,5 @@
 ﻿import { ConfigState } from './config-state.model';
-import { ConfigActions, CONFIG_INITIALIZE } from './config.actions';
+import { CONFIG_INITIALIZE } from './config.actions';
 
 export const initialState: ConfigState = {
     data: {},
@@ -7,21 +7,21 @@ export const initialState: ConfigState = {
     source: ''
 };
 
-export function configReducer(state: ConfigState = initialState, action: ConfigActions): ConfigState {
+export function configReducer(state: ConfigState = initialState, action: any): ConfigState {
     switch (action.type) {
-    case CONFIG_INITIALIZE:
-    {
-        return {
-            ...state,
-            data: action.payload.data,
-            loaded: action.payload.loaded,
-            source: action.payload.source
-        };
-    }
-    default:
-    {
-        return state;
-    }
+        case CONFIG_INITIALIZE:
+            {
+                return {
+                    ...state,
+                    data: action.payload.data,
+                    loaded: action.payload.loaded,
+                    source: action.payload.source
+                };
+            }
+        default:
+            {
+                return state;
+            }
     }
 }
 

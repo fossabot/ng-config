@@ -21,10 +21,10 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
     <Content Include="tsconfig-build.json" />
-    <Content Include="tsconfig.json" />
     <Content Include="ng-config\package.json" />
     <Content Include="ng-config\tsconfig-build.json" />
     <Content Include="ng-config\README.md" />
+    <Content Include="tsconfig.json" />
     <TypeScriptCompile Include="ng-config\index.ts" />
     <TypeScriptCompile Include="ng-config\public_api.ts" />
     <Content Include="ng-config-ngrx-store\package.json" />
@@ -48,6 +48,7 @@
     <TypeScriptCompile Include="ng-config-ngrx-store\src\config.ngrx-store-loader-wrapper.ts" />
     <TypeScriptCompile Include="ng-config-ngrx-store\src\config.reducer.ts" />
     <TypeScriptCompile Include="ng-config-ngrx-store\src\index.ts" />
+    <TypeScriptCompile Include="ng-config\tests\config.loader.spec.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ng-config" />
@@ -56,6 +57,7 @@
     <Folder Include="ng-config\src" />
     <Folder Include="ng-config-ngrx-store" />
     <Folder Include="ng-config-ngrx-store\src" />
+    <Folder Include="ng-config\tests\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->

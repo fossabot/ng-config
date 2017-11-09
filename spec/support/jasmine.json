@@ -1,0 +1,13 @@
+{
+  "spec_dir": "modules",
+  "spec_files": [
+    "**/*spec.ts"
+  ],
+  "helpers": [
+    "../node_modules/ts-node/register.js",
+    "../spec/helpers/spec-test.browser.ts"
+  ],
+  "entry": "../spec/helpers/boot-test.browser.ts",
+  "stopSpecOnExpectationFailure": false,
+  "random": false
+}

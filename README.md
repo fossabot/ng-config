@@ -1,4 +1,4 @@
 ng-config
 =====================
 
-Contains configuration service libraries for Angular app.
+Contains configuration service modules for Angular app.

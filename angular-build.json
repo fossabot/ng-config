@@ -5,174 +5,120 @@
       "name": "ng-config",
       "srcDir": "modules/ng-config",
       "outDir": "dist/packages/ng-config",
+
       "libraryName": "baf.ngConfig",
       "banner": "../../banner.txt",
+
+      "tsTranspilation": {
+        "tsconfig": "tsconfig-build.json",
+        "copyTemplateAndStyleUrls": true,
+        "inlineMetaDataResources": true
+      },
+
+      "packageOptions": {
+        "packageJsonFile": "package.json"
+      },
+
       "envOverrides": {
-        "dev": {
-          "tsTranspilations": [
-            {
-              "tsconfig": "tsconfig-build.json",
-              "target": "es5",
-              "copyTemplateAndStyleUrls": false,
-              "inlineMetaDataResources": false
-            }
-          ]
-        },
         "prod": {
-          "assets": [
+          "copy": [
             "../../LICENSE",
             "README.md"
           ],
-          "tsTranspilations": [
+
+          //"clean": {
+          //  "beforeRun": {
+          //    "cleanOutDir": true
+          //    //"paths": [],
+          //    //"exclude": []
+          //  }
+          //},
+
+          "bundles": [
             {
-              "tsconfig": "tsconfig-build.json",
-              "copyTemplateAndStyleUrls": false,
-              "inlineMetaDataResources": false
-            }
-          ],
-          "bundleTargets": [
-            {
-              "name": "esm-es2015",
               "entry": "index.js",
-              "entryResolution": {
-                "entryRoot": "tsTranspilationOutDir"
-              },
+              "entryRoot": "tsOutDir",
               "libraryTarget": "es",
-              "outDir": "[packagescope]",
-              "inlineResources": false,
-              "outFileName": "[packagename].js"
+              "outDir": "bundles"
+              //"outFileName": "[packagename].js"
             },
             {
-              "name": "esm-es5",
-              "entryResolution": {
-                "entryRoot": "bundleTargetOutDir"
-              },
+              "entryRoot": "prevBundleOutDir",
               "libraryTarget": "es",
-              "outDir": "[packagescope]",
-              "inlineResources": false,
-              "addPureAnnotations": true,
+              "outDir": "bundles",
               "transformScriptTargetOnly": true,
               "scriptTarget": "es5"
             },
             {
-              "name": "umd-es5",
-              "entryResolution": {
-                "entryRoot": "bundleTargetOutDir"
-              },
+              "entryRoot": "prevBundleOutDir",
               "libraryTarget": "umd",
-              "outDir": "bundles",
-              "inlineResources": false
+              "outDir": "bundles"
             }
           ],
+
           "packageOptions": {
-            "packageConfigEntryFile": "package.json",
-            "typingsAndMetaData": {
-              "entry": "index.d.ts",
-              "reExportTo": "[packagename].d.ts"
-            }
-          },
-          "afterBundleAction": {
-            "cleanFiles": [
-              "src/**/*.js",
-              "src/**/*.map",
-              "index.js",
-              "index.js.map",
-              "public_api.js",
-              "public_api.js.map",
-              "../../../node_modules/[packagescope]/[packagename]"
-            ],
-            "copyFiles": [
-              {
-                "to": "../../../node_modules/[packagescope]/[packagename]"
-              }
-            ]
+            "packageJsonFile": "package.json",
+            "reExportTypingsAndMetaDataAs": "[packagename]"
           }
         }
       }
     },
     {
       "name": "ng-config-http-loader",
-      "extends": "ng-config",
       "srcDir": "modules/ng-config/http-loader",
+      "outDir": "dist/packages/ng-config",
+
       "libraryName": "baf.ngConfig.httpLoader",
+
       "banner": "../../../banner.txt",
       "externals": {
         "@bizappframework/ng-config": "baf.ngConfig"
       },
+
+      "tsTranspilation": {
+        "tsconfig": "tsconfig-build.json",
+        "copyTemplateAndStyleUrls": true,
+        "inlineMetaDataResources": true
+      },
+
       "envOverrides": {
-        "dev": {
-          "tsTranspilations": [
-            {
-              "tsconfig": "tsconfig-build.json",
-              "target": "es5",
-              "copyTemplateAndStyleUrls": false,
-              "inlineMetaDataResources": false
-            }
-          ]
-        },
         "prod": {
-          "tsTranspilations": [
+          "copy": [
             {
-              "tsconfig": "tsconfig-build.json",
-              "copyTemplateAndStyleUrls": false,
-              "inlineMetaDataResources": false
+              "from": "../../../dist/packages/ng-config",
+              "to": "../../../node_modules/@bizappframework/ng-config"
             }
           ],
-          "bundleTargets": [
+
+          "bundles": [
             {
-              "name": "esm-es2015",
               "entry": "index.js",
-              "entryResolution": {
-                "entryRoot": "tsTranspilationOutDir"
-              },
+              "entryRoot": "tsOutDir",
               "libraryTarget": "es",
-              "outDir": "[packagescope]/[parentpackagename]",
-              "inlineResources": true,
-              "outFileName": "[packagename].js"
+              "outDir": "bundles/[parentpackagename]"
+              //"outFileName": "[packagename].js"
             },
             {
-              "name": "esm-es5",
-              "entryResolution": {
-                "entryRoot": "bundleTargetOutDir"
-              },
+              "entryRoot": "prevBundleOutDir",
               "libraryTarget": "es",
-              "outDir": "[packagescope]/[parentpackagename]",
-              "inlineResources": false,
-              "addPureAnnotations": true,
+              "outDir": "bundles/[parentpackagename]",
               "transformScriptTargetOnly": true,
               "scriptTarget": "es5"
             },
             {
-              "name": "umd-es5",
-              "entryResolution": {
-                "entryRoot": "bundleTargetOutDir"
-              },
+              "entryRoot": "prevBundleOutDir",
               "libraryTarget": "umd",
               "outDir": "bundles",
-              "inlineResources": false,
               "outFileName": "[parentpackagename]-[packagename].umd.js"
             }
           ],
+
           "packageOptions": {
-            "packageConfigEntryFile": "package.json",
-            "packageConfigOutDir": "[packagename]",
-            "typingsAndMetaData": {
-              "entry": "index.d.ts",
-              "reExportTo": "[packagename].d.ts"
-            }
-          },
-          "afterBundleAction": {
-            "cleanFiles": [
-              "[packagename]/**/*.js",
-              "[packagename]/**/*.map",
-              "../../../node_modules/[packagescope]/[parentpackagename]"
-            ],
-            "copyFiles": [
-              {
-                "to": "../../../node_modules/[packagescope]/[parentpackagename]"
-              }
-            ]
+            "packageJsonFile": "package.json",
+            "packageJsonFileOutDir": "[packagename]",
+            "reExportTypingsAndMetaDataAs": "[packagename]"
           }
+
         }
       }
     },
@@ -183,12 +129,25 @@
       "outDir": "dist/packages/ng-config-ngrx-store",
       "libraryName": "baf.ngConfig.ngrxStore",
       "externals": {
-        "@ngrx/stroe": "ngrx.store",
+        "@ngrx/store": "ngrx.store",
         "@ngrx/effects": "ngrx.effects",
         "@ngrx/entity": "ngrx.entity",
         "@ngrx/router-store": "ngrx.routerStore",
         "@ngrx/store-devtools": "ngrx.storeDevtools",
         "@bizappframework/ng-config": "baf.ngConfig"
+      },
+
+      "envOverrides": {
+        "prod": {
+          "copy": [
+            "../../LICENSE",
+            "README.md",
+            {
+              "from": "../../dist/packages/ng-config-ngrx-store",
+              "to": "../../../node_modules/@bizappframework/ng-config-ngrx-store"
+            }
+          ]
+        }
       }
     }
   ],
@@ -200,16 +159,20 @@
       "outDir": "samples/ng-config-aspnetcore-sample/wwwroot",
       "entry": "main.browser.ts",
       "tsconfig": "tsconfig.app.json",
-      "assets": [
+
+      "copy": [
         "favicon.ico"
       ],
+
       "polyfills": [
-        "core-js/es6/reflect",
-        "core-js/es7/reflect",
-        "zone.js/dist/zone"
+        "polyfills.ts"
+        //"core-js/es6/reflect",
+        //"core-js/es7/reflect",
+        //"zone.js/dist/zone"
       ],
+
       "publicPath": "/",
-      "htmlInjectOptions": {
+      "htmlInject": {
         "scriptsOut": "../Views/Shared/_ScriptsPartial.cshtml",
         "stylesOut": "../Views/Shared/_StylesPartial.cshtml",
         "iconsOut": "../Views/Shared/_FaviconsPartial.cshtml",

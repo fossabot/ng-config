@@ -10,7 +10,9 @@ import { ConfigModule, ConfigLoader } from '@bizappframework/ng-config';
 import { ConfigHttpLoader } from '@bizappframework/ng-config/http-loader';
 import { ConfigNgrxStoreLoaderWrapper } from '@bizappframework/ng-config-ngrx-store';
 
- import { reducers, metaReducers } from './reducers';
+import { environment } from '../environments/environment';
+
+import { reducers, metaReducers } from './reducers';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -25,7 +27,7 @@ import { AppComponent } from './app.component';
 
         // ngrx
         StoreModule.forRoot(reducers, { metaReducers }),
-        StoreDevtoolsModule.instrument(),
+        !environment.production ? StoreDevtoolsModule.instrument() : [],
 
         ConfigModule.forRoot({
             provide: ConfigLoader,

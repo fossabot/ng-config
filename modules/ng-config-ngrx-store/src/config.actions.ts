@@ -1,13 +1,9 @@
-﻿import { Action } from '@ngrx/store';
+﻿export const CONFIG_INITIALIZE = '[Config] Initialize';
 
-import { ConfigState } from './config-state.model';
+// export class ConfigInitialize implements Action {
+//    readonly type = CONFIG_INITIALIZE;
 
-export const CONFIG_INITIALIZE = '[Config] Initialize';
+//    constructor(public payload: ConfigState) { }
+// }
 
-export class ConfigInitialize implements Action {
-    readonly type = CONFIG_INITIALIZE;
-
-    constructor(public payload: ConfigState) { }
-}
-
-export type ConfigActions = | ConfigInitialize;
+// export type ConfigActions = ConfigInitialize | ;
