@@ -21,18 +21,16 @@
 
       "envOverrides": {
         "prod": {
+          "clean": {
+            "beforeRun": {
+              "cleanOutDir": true
+            }
+          },
+
           "copy": [
             "../../LICENSE",
             "README.md"
           ],
-
-          //"clean": {
-          //  "beforeRun": {
-          //    "cleanOutDir": true
-          //    //"paths": [],
-          //    //"exclude": []
-          //  }
-          //},
 
           "bundles": [
             {
@@ -69,8 +67,8 @@
       "outDir": "dist/packages/ng-config",
 
       "libraryName": "baf.ngConfig.httpLoader",
-
       "banner": "../../../banner.txt",
+
       "externals": {
         "@bizappframework/ng-config": "baf.ngConfig"
       },
@@ -124,10 +122,12 @@
     },
     {
       "name": "ng-config-ngrx-store",
-      "extends": "ng-config",
       "srcDir": "modules/ng-config-ngrx-store",
       "outDir": "dist/packages/ng-config-ngrx-store",
+
       "libraryName": "baf.ngConfig.ngrxStore",
+      "banner": "../../banner.txt",
+
       "externals": {
         "@ngrx/store": "ngrx.store",
         "@ngrx/effects": "ngrx.effects",
@@ -137,8 +137,24 @@
         "@bizappframework/ng-config": "baf.ngConfig"
       },
 
+      "tsTranspilation": {
+        "tsconfig": "tsconfig-build.json",
+        "copyTemplateAndStyleUrls": true,
+        "inlineMetaDataResources": true
+      },
+
+      "packageOptions": {
+        "packageJsonFile": "package.json"
+      },
+
       "envOverrides": {
         "prod": {
+          "clean": {
+            "beforeRun": {
+              "cleanOutDir": true
+            }
+          },
+
           "copy": [
             "../../LICENSE",
             "README.md",
@@ -146,7 +162,34 @@
               "from": "../../dist/packages/ng-config-ngrx-store",
               "to": "../../../node_modules/@bizappframework/ng-config-ngrx-store"
             }
-          ]
+          ],
+
+          "bundles": [
+            {
+              "entry": "index.js",
+              "entryRoot": "tsOutDir",
+              "libraryTarget": "es",
+              "outDir": "bundles"
+              //"outFileName": "[packagename].js"
+            },
+            {
+              "entryRoot": "prevBundleOutDir",
+              "libraryTarget": "es",
+              "outDir": "bundles",
+              "transformScriptTargetOnly": true,
+              "scriptTarget": "es5"
+            },
+            {
+              "entryRoot": "prevBundleOutDir",
+              "libraryTarget": "umd",
+              "outDir": "bundles"
+            }
+          ],
+
+          "packageOptions": {
+            "packageJsonFile": "package.json",
+            "reExportTypingsAndMetaDataAs": "[packagename]"
+          }
         }
       }
     }
@@ -157,6 +200,7 @@
       "platformTarget": "web",
       "srcDir": "samples/ng-config-aspnetcore-sample/ClientApp",
       "outDir": "samples/ng-config-aspnetcore-sample/wwwroot",
+
       "entry": "main.browser.ts",
       "tsconfig": "tsconfig.app.json",
 
@@ -172,20 +216,27 @@
       ],
 
       "publicPath": "/",
+      "baseHref": "~/",
+
       "htmlInject": {
+        "baseHrefOut": "../Views/Shared/_BaseHrefPartial.cshtml",
         "scriptsOut": "../Views/Shared/_ScriptsPartial.cshtml",
         "stylesOut": "../Views/Shared/_StylesPartial.cshtml",
         "iconsOut": "../Views/Shared/_FaviconsPartial.cshtml",
         "resourceHintsOut": "../Views/Shared/_ResourceHintsPartial.cshtml",
-        "customLinkAttributes": {
-          "asp-append-version": "true"
-        },
-        "customScriptAttributes": {
+
+        "customAttributes": {
           "asp-append-version": "true"
         }
       },
       "envOverrides": {
         "prod": {
+          "clean": {
+            "beforeRun": {
+              "cleanOutDir": true
+            }
+          },
+
           "tsconfig": "tsconfig.app.aot.json",
           "moduleReplacements": [
             {
@@ -196,5 +247,7 @@
         }
       }
     }
-  ]
+  ],
+
+  "logLevel": "debug"
 }

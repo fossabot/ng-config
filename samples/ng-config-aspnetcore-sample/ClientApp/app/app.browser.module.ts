@@ -37,10 +37,10 @@ import { AppComponent } from './app.component';
     ],
     providers: []
 })
-export class AppModule { }
+export class AppModule {}
 
 // config factory
-export function configLoaderFactory(store: any, http: any): ConfigLoader {
+export function configLoaderFactory(store: Store<any>, http: HttpClient): ConfigLoader {
     const originUrl = window.location.origin;
     const configHttpLoader = new ConfigHttpLoader(http, `${originUrl}/appsettings.json`);
     return new ConfigNgrxStoreLoaderWrapper(store, configHttpLoader);

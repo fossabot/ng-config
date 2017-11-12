@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>@ViewData["Title"]</title>
-    <base href="~/" />
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    @await Html.PartialAsync("_BaseHrefPartial")
     @await Html.PartialAsync("_ResourceHintsPartial")
     @await Html.PartialAsync("_FaviconsPartial")
     @await Html.PartialAsync("_StylesPartial")

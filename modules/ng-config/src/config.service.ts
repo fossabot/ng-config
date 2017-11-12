@@ -10,9 +10,7 @@ export class ConfigService {
     constructor(public loader: ConfigLoader) { }
 
     init(): Promise<any> {
-        return this.loader.load().then((data: { [key: string]: any }) => {
-            this.cachedSettings = data;
-        });
+        return this.loader.load().then((data: { [key: string]: any }) => this.cachedSettings = data);
     }
 
     getSettings(key?: string | Array<string>, defaultValue?: any): any {

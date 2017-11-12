@@ -1,6 +1,6 @@
 {
   "name": "bizappframework-ng-config",
-  "version": "1.0.0-rc.0",
+  "version": "1.0.0-rc.2",
   "description": "Contains configuration service modules for Angular app.",
   "keywords": [
     "angular config",
@@ -17,7 +17,7 @@
   },
   "scripts": {
     "build": "ngb build",
-    "build:prod": "ngb build --prod --aot --clean"
+    "build:release": "ngb build --env.prod --env.aot"
   },
   "devDependencies": {
     "@angular/animations": "^5.0.1",
