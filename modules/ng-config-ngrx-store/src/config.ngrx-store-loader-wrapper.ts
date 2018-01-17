@@ -6,11 +6,11 @@ import { ConfigState } from './config-state.model';
 import { CONFIG_INITIALIZE } from './config.actions';
 
 export class ConfigNgrxStoreLoaderWrapper implements ConfigLoader {
-    constructor(private readonly store: Store<ConfigState>, private readonly configLoader: ConfigLoader) {
-        if (!this.store) {
+    constructor(private readonly _store: Store<ConfigState>, private readonly _configLoader: ConfigLoader) {
+        if (!this._store) {
             throw new Error(`'Store<ConfigState>' service is not available.`);
         }
-        if (!this.configLoader) {
+        if (!this._configLoader) {
             throw new Error(`'configLoader' service is not available.`);
         }
     }
@@ -20,10 +20,10 @@ export class ConfigNgrxStoreLoaderWrapper implements ConfigLoader {
     }
 
     load(): Promise<any> {
-        return this.configLoader.load()
+        return this._configLoader.load()
             .then((data: { [key: string]: any; }) => {
-                const source = this.configLoader.source();
-                this.store.dispatch({
+                const source = this._configLoader.source();
+                this._store.dispatch({
                     type: CONFIG_INITIALIZE,
                     payload: {
                         loaded: true,

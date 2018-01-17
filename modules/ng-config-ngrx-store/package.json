@@ -15,7 +15,7 @@
   "license": "",
   "repository": "",
   "dependencies": {
-    "tslib": "^1.7.1"
+    "tslib": "^1.8.1"
   },
   "peerDependencies": {
     "@angular/core": ">=4.3.0",
