@@ -10,18 +10,18 @@ import { ConfigService } from './config.service';
     exports: [ConfigPipe]
 })
 export class ConfigModule {
-    static forRoot(configuredProvider: Provider = {
+    static forRoot(loaderProvider: Provider = {
         provide: ConfigLoader,
         useFactory: (configStaticLoaderFactory)
-    }): ModuleWithProviders {
+    }, initializerFactory: (configService: ConfigService) => () => Promise<any> = configAppInitializerFactory): ModuleWithProviders {
         return {
             ngModule: ConfigModule,
             providers: [
-                configuredProvider,
+                loaderProvider,
                 ConfigService,
                 {
                     provide: APP_INITIALIZER,
-                    useFactory: (configAppInitializerFactory),
+                    useFactory: (initializerFactory),
                     deps: [ConfigService],
                     multi: true
                 }
@@ -29,7 +29,7 @@ export class ConfigModule {
         };
     }
 
-    constructor( @Optional() @SkipSelf() parentModule: ConfigModule) {
+    constructor(@Optional() @SkipSelf() parentModule: ConfigModule) {
         if (parentModule) {
             throw new Error('ConfigModule already loaded, import in root module only.');
         }
@@ -40,7 +40,7 @@ export function configStaticLoaderFactory(): ConfigLoader {
     return new ConfigStaticLoader({});
 }
 
-export function configAppInitializerFactory(configService: ConfigService): any {
+export function configAppInitializerFactory(configService: ConfigService): () => Promise<any> {
     const res = () => configService.load();
     return res;
 }
