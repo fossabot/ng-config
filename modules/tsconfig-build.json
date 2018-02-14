@@ -1,9 +1,4 @@
-﻿/**
- * Root tsconfig file for use building all packages. Note there is no rootDir
- * and therefore any tsconfig in the package directory will need to define its own
- * rootDir.
- */
-{
+﻿{
   "compilerOptions": {
     "target": "es2015",
     "module": "es2015",

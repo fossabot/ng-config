@@ -15,11 +15,11 @@
   "license": "",
   "repository": "",
   "dependencies": {
-    "tslib": "^1.8.1"
+    "tslib": "^1.9.0"
   },
   "peerDependencies": {
-    "@angular/core": ">=4.3.0",
-    "@bizappframework/ng-config": "^1.0.0-rc.0",
-    "@ngrx/store": ">=4.0.0"
+    "@angular/core": ">=5.0.0",
+    "@bizappframework/ng-config": "^1.0.1",
+    "@ngrx/store": ">=5.0.0"
   }
 }

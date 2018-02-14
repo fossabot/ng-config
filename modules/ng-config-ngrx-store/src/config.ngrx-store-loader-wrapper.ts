@@ -2,8 +2,8 @@
 
 import { ConfigLoader } from '@bizappframework/ng-config';
 
-import { ConfigState } from './config-state.model';
-import { CONFIG_INITIALIZE } from './config.actions';
+import { ConfigState } from './config-state';
+import * as configActions from './config.actions';
 
 export class ConfigNgrxStoreLoaderWrapper implements ConfigLoader {
     constructor(private readonly _store: Store<ConfigState>, private readonly _configLoader: ConfigLoader) {
@@ -19,18 +19,16 @@ export class ConfigNgrxStoreLoaderWrapper implements ConfigLoader {
         return 'ConfigNgrxStoreLoader';
     }
 
-    load(): Promise<any> {
+    load(): Promise<{ [key: string]: any }> {
         return this._configLoader.load()
             .then((data: { [key: string]: any; }) => {
                 const source = this._configLoader.source();
-                this._store.dispatch({
-                    type: CONFIG_INITIALIZE,
-                    payload: {
-                        loaded: true,
-                        data: data,
-                        source: source
-                    }
+                const action = new configActions.Load({
+                    data: data,
+                    loaded: true,
+                    source: source
                 });
+                this._store.dispatch(action);
                 return data;
             });
     }

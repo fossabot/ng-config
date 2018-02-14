@@ -9,12 +9,17 @@ export class ConfigService {
 
     constructor(public loader: ConfigLoader) { }
 
-    init(): Promise<any> {
-        return this.loader.load().then((data: { [key: string]: any }) => this._cachedSettings = data);
+    load(): Promise<{ [key: string]: any }> {
+        return this.loader.load()
+            .then((data: { [key: string]: any }) => this._cachedSettings = data);
     }
 
-    getSettings(key?: string | Array<string>, defaultValue?: any): any {
-        if (!key || (Array.isArray(key) && !key[0])) {
+    getSettings<T>(key: string, defaultValue?: T): T;
+
+    getSettings(key?: string | Array<string>, defaultValue?: any): any;
+
+    getSettings(key?: string | string[], defaultValue?: any): any {
+        if (!this._cachedSettings || !key || (Array.isArray(key) && !key[0])) {
             return this._cachedSettings;
         }
 

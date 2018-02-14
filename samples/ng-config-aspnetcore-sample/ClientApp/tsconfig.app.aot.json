@@ -1,8 +1,0 @@
-﻿{
-  "extends": "./tsconfig.app.json",
-  "compilerOptions": {
-    "paths": {
-      //"@bizappframework/*": [ "../../../dist/packages/*" ]
-    }
-  }
-}

@@ -43,7 +43,7 @@
     <TypeScriptCompile Include="ng-config\src\config.static.loader.ts" />
     <TypeScriptCompile Include="ng-config\src\index.ts" />
     <TypeScriptCompile Include="ng-config\http-loader\src\config.http-loader.ts" />
-    <TypeScriptCompile Include="ng-config-ngrx-store\src\config-state.model.ts" />
+    <TypeScriptCompile Include="ng-config-ngrx-store\src\config-state.ts" />
     <TypeScriptCompile Include="ng-config-ngrx-store\src\config.actions.ts" />
     <TypeScriptCompile Include="ng-config-ngrx-store\src\config.ngrx-store-loader-wrapper.ts" />
     <TypeScriptCompile Include="ng-config-ngrx-store\src\config.reducer.ts" />

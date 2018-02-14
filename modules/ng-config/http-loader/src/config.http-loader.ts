@@ -12,7 +12,7 @@ export class ConfigHttpLoader implements ConfigLoader {
         return 'ConfigHttpLoader';
     }
 
-    load(): Promise<any> {
+    load(): Promise<{ [key: string]: any }> {
         return this._httpClient.get(this._endpoint)
             .toPromise();
     }

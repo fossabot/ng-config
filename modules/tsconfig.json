@@ -1,3 +1,11 @@
 ﻿{
-  "extends": "../tsconfig.json"
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "@bizappframework/ng-config": [ "./ng-config" ],
+      "@bizappframework/ng-config-ngrx-store": [ "./ng-config-ngrx-store" ]
+    }
+  }
 }

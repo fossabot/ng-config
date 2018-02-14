@@ -1,21 +1,30 @@
-﻿import { ConfigState } from './config-state.model';
-import { CONFIG_INITIALIZE } from './config.actions';
+﻿import { ConfigState } from './config-state';
+import { ConfigActions, ConfigActionTypes } from './config.actions';
 
 export const initialState: ConfigState = {
     data: {},
+    source: '',
     loaded: false,
-    source: ''
 };
 
-export function configReducer(state: ConfigState = initialState, action: any): ConfigState {
+export function configReducer(state: ConfigState = initialState, action: ConfigActions): ConfigState {
     switch (action.type) {
-        case CONFIG_INITIALIZE:
+        case ConfigActionTypes.Load:
             {
                 return {
                     ...state,
                     data: action.payload.data,
-                    loaded: action.payload.loaded,
-                    source: action.payload.source
+                    source: action.payload.source,
+                    loaded: true
+                };
+            }
+        case ConfigActionTypes.Reload:
+            {
+                return {
+                    ...state,
+                    data: action.payload.data,
+                    source: action.payload.source,
+                    loaded: true
                 };
             }
         default:

@@ -21,11 +21,6 @@
     "skipDefaultLibCheck": true,
     "lib": [ "es2017", "dom" ],
 
-    "baseUrl": ".",
-    "rootDir": ".",
-    "paths": {
-      "@bizappframework/*": [ "modules/*" ]
-    },
     "outDir": "./dist"
   }
 }

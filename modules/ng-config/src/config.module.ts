@@ -41,6 +41,6 @@ export function configStaticLoaderFactory(): ConfigLoader {
 }
 
 export function configAppInitializerFactory(configService: ConfigService): any {
-    const res = () => configService.init();
+    const res = () => configService.load();
     return res;
 }

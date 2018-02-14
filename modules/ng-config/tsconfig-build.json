@@ -4,10 +4,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": ".",
-    "paths": {
-      "@angular/core": [ "../../node_modules/@angular/core" ],
-      "rxjs/*": [ "../../node_modules/rxjs/*" ]
-    },
     "outDir": "../../dist/packages/ng-config"
   },
   "files": [

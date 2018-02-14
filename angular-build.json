@@ -11,8 +11,8 @@
 
       "tsTranspilation": {
         "tsconfig": "tsconfig-build.json",
-        "copyTemplateAndStyleUrls": true,
-        "inlineMetaDataResources": true
+        "copyTemplateAndStyleUrls": false,
+        "inlineMetaDataResources": false
       },
 
       "packageOptions": {
@@ -75,8 +75,8 @@
 
       "tsTranspilation": {
         "tsconfig": "tsconfig-build.json",
-        "copyTemplateAndStyleUrls": true,
-        "inlineMetaDataResources": true
+        "copyTemplateAndStyleUrls": false,
+        "inlineMetaDataResources": false
       },
 
       "envOverrides": {
@@ -139,8 +139,8 @@
 
       "tsTranspilation": {
         "tsconfig": "tsconfig-build.json",
-        "copyTemplateAndStyleUrls": true,
-        "inlineMetaDataResources": true
+        "copyTemplateAndStyleUrls": false,
+        "inlineMetaDataResources": false
       },
 
       "packageOptions": {
@@ -198,21 +198,20 @@
     {
       "name": "browser-app",
       "platformTarget": "web",
-      "srcDir": "samples/ng-config-aspnetcore-sample/ClientApp",
+      "srcDir": "samples/ng-config-aspnetcore-sample/ClientApp/src",
       "outDir": "samples/ng-config-aspnetcore-sample/wwwroot",
 
       "entry": "main.browser.ts",
-      "tsconfig": "tsconfig.app.json",
+      "tsconfig": "tsconfig.browser.json",
 
       "copy": [
         "favicon.ico"
       ],
 
       "polyfills": [
-        "polyfills.ts"
-        //"core-js/es6/reflect",
-        //"core-js/es7/reflect",
-        //"zone.js/dist/zone"
+        "core-js/es6/reflect",
+        "core-js/es7/reflect",
+        "zone.js/dist/zone"
       ],
 
       "publicPath": "/",
@@ -237,7 +236,8 @@
             }
           },
 
-          "tsconfig": "tsconfig.app.aot.json",
+          //"entry": "main.browser.prod.ts",
+          
           "moduleReplacements": [
             {
               "resourcePath": "./environments/environment.ts",

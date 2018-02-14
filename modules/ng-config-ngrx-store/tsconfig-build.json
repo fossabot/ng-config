@@ -5,7 +5,6 @@
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "@ngrx/store": [ "../../node_modules/@ngrx/store" ],
       "@bizappframework/ng-config": [ "../../dist/packages/ng-config" ]
     },
     "outDir": "../../dist/packages/ng-config-ngrx-store"

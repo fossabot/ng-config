@@ -7,10 +7,10 @@ import { ConfigService } from '@bizappframework/ng-config';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-    constructor(private readonly configService: ConfigService) { }
+    constructor(private readonly _configService: ConfigService) { }
 
     get configJson(): string {
-        const config = this.configService.getSettings();
+        const config = this._configService.getSettings();
         return JSON.stringify(config, null, 2);
     }
 }
