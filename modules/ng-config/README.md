@@ -3,17 +3,22 @@ ng-config
 
 Contains configuration service libraries for Angular app.
 
-## Getting started  
+Getting started
+---------------
 
-### Installation  
+Installation
+---------------
+
 ```
 npm install @bizappframework/ng-config
 ```
 
-### Example
+Example
+---------------
 
 [ng-config-aspnetcore-sample](https://github.com/BizAppFramework/ng-config/tree/master/samples/ng-config-aspnetcore-sample)
 
-### License
+License
+---------------
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](/LICENSE)
