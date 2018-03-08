@@ -1,6 +1,6 @@
 {
   "name": "bizappframework-ng-config",
-  "version": "5.0.0-beta.0",
+  "version": "5.0.0-beta.1",
   "description": "Contains configuration service modules for Angular app.",
   "keywords": [
     "angular-config-service",
