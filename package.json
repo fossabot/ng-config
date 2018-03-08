@@ -1,9 +1,9 @@
 {
   "name": "bizappframework-ng-config",
-  "version": "1.0.1",
+  "version": "5.0.0-beta.0",
   "description": "Contains configuration service modules for Angular app.",
   "keywords": [
-    "angular config service",
+    "angular-config-service",
     "config",
     "configuration",
     "settings"
@@ -15,26 +15,32 @@
     "url": "https://github.com/bizappframework/ng-config.git"
   },
   "scripts": {
-    "build": "ngb build",
-    "build:release": "ngb build --env.prod --env.aot"
+    "lint": "tslint -p tsconfig.json -c tslint.json  -t verbose",
+    "build:generate": "ngb build --disable-telemetry --filter=generate --env.generate --env.prod",
+    "build": "ngb build --disable-telemetry --env.prod --env.aot --env.generate"
   },
   "devDependencies": {
-    "@angular/animations": "^5.2.5",
-    "@angular/common": "^5.2.5",
-    "@angular/compiler": "^5.2.5",
-    "@angular/core": "^5.2.5",
-    "@angular/platform-browser": "^5.2.5",
-    "@angular/platform-browser-dynamic": "^5.2.5",
-    "@angular/platform-server": "^5.2.5",
-    "@ngrx/store": "^5.1.0",
-    "@ngrx/store-devtools": "^5.1.0",
+    "@angular/common": "^5.2.7",
+    "@angular/compiler": "^5.2.7",
+    "@angular/core": "^5.2.7",
+    "@angular/platform-browser": "^5.2.7",
+    "@angular/platform-browser-dynamic": "^5.2.7",
+    "@bizappframework/ng-logging": "^5.0.0-beta.0",
+    "@ngrx/store": "^5.2.0",
+    "@ngrx/store-devtools": "^5.2.0",
+    "classlist.js": "^1.1.20150312",
+    "codelyzer": "^4.2.1",
     "core-js": "^2.5.3",
+    "ngrx-store-freeze": "^0.2.1",
     "rxjs": "^5.5.6",
+    "rxjs-tslint-rules": "^3.15.0",
     "tslib": "^1.9.0",
-    "zone.js": "^0.8.20",
-    "@types/jasmine": "^2.8.6",
-    "@types/node": "^9.4.6",
-    "ts-node": "^4.1.0",
-    "typescript": "^2.7.1"
+    "tslint": "^5.9.1",
+    "tslint-eslint-rules": "^5.1.0",
+    "tslint-microsoft-contrib": "^5.0.3",
+    "typescript": "^2.7.2",
+    "vrsource-tslint-rules": "^5.8.1",
+    "web-animations-js": "^2.3.1",
+    "zone.js": "^0.8.20"
   }
 }

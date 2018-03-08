@@ -1,24 +1,19 @@
 {
-  "$schema": "node_modules/@bizappframework/angular-build/schemas/schema-draft-04.json#",
+  "$schema": "./node_modules/@bizappframework/angular-build/schemas/schema-draft-04.json#",
   "libs": [
     {
       "name": "ng-config",
       "srcDir": "modules/ng-config",
       "outDir": "dist/packages/ng-config",
-
       "libraryName": "baf.ngConfig",
-      "banner": "../../banner.txt",
-
       "tsTranspilation": {
         "tsconfig": "tsconfig-build.json",
         "copyTemplateAndStyleUrls": false,
         "inlineMetaDataResources": false
       },
-
       "packageOptions": {
         "packageJsonFile": "package.json"
       },
-
       "envOverrides": {
         "prod": {
           "clean": {
@@ -26,12 +21,11 @@
               "cleanOutDir": true
             }
           },
-
           "copy": [
             "../../LICENSE",
             "README.md"
           ],
-
+          "banner": "../banner.txt",
           "bundles": [
             {
               "entry": "index.js",
@@ -53,7 +47,6 @@
               "outDir": "bundles"
             }
           ],
-
           "packageOptions": {
             "packageJsonFile": "package.json",
             "reExportTypingsAndMetaDataAs": "[packagename]"
@@ -65,20 +58,20 @@
       "name": "ng-config-http-loader",
       "srcDir": "modules/ng-config/http-loader",
       "outDir": "dist/packages/ng-config",
-
       "libraryName": "baf.ngConfig.httpLoader",
-      "banner": "../../../banner.txt",
-
       "externals": {
         "@bizappframework/ng-config": "baf.ngConfig"
       },
-
       "tsTranspilation": {
         "tsconfig": "tsconfig-build.json",
         "copyTemplateAndStyleUrls": false,
         "inlineMetaDataResources": false
       },
-
+      "clean": {
+        "beforeRun": {
+          "cleanOutDir": false
+        }
+      },
       "envOverrides": {
         "prod": {
           "copy": [
@@ -87,7 +80,7 @@
               "to": "../../../node_modules/@bizappframework/ng-config"
             }
           ],
-
+          "banner": "../../banner.txt",
           "bundles": [
             {
               "entry": "index.js",
@@ -110,13 +103,11 @@
               "outFileName": "[parentpackagename]-[packagename].umd.js"
             }
           ],
-
           "packageOptions": {
             "packageJsonFile": "package.json",
             "packageJsonFileOutDir": "[packagename]",
             "reExportTypingsAndMetaDataAs": "[packagename]"
           }
-
         }
       }
     },
@@ -124,10 +115,7 @@
       "name": "ng-config-ngrx-store",
       "srcDir": "modules/ng-config-ngrx-store",
       "outDir": "dist/packages/ng-config-ngrx-store",
-
       "libraryName": "baf.ngConfig.ngrxStore",
-      "banner": "../../banner.txt",
-
       "externals": {
         "@ngrx/store": "ngrx.store",
         "@ngrx/effects": "ngrx.effects",
@@ -136,17 +124,14 @@
         "@ngrx/store-devtools": "ngrx.storeDevtools",
         "@bizappframework/ng-config": "baf.ngConfig"
       },
-
       "tsTranspilation": {
         "tsconfig": "tsconfig-build.json",
         "copyTemplateAndStyleUrls": false,
         "inlineMetaDataResources": false
       },
-
       "packageOptions": {
         "packageJsonFile": "package.json"
       },
-
       "envOverrides": {
         "prod": {
           "clean": {
@@ -154,7 +139,6 @@
               "cleanOutDir": true
             }
           },
-
           "copy": [
             "../../LICENSE",
             "README.md",
@@ -163,7 +147,7 @@
               "to": "../../../node_modules/@bizappframework/ng-config-ngrx-store"
             }
           ],
-
+          "banner": "../banner.txt",
           "bundles": [
             {
               "entry": "index.js",
@@ -185,7 +169,6 @@
               "outDir": "bundles"
             }
           ],
-
           "packageOptions": {
             "packageJsonFile": "package.json",
             "reExportTypingsAndMetaDataAs": "[packagename]"
@@ -194,60 +177,107 @@
       }
     }
   ],
-  "apps": [
+   "apps": [
+    {
+      "name": "generate",
+      "platformTarget": "web",
+      "srcDir": "samples/ng-config-aspnetcore-sample/ClientApp",
+      "outDir": "samples/ng-config-aspnetcore-sample/ClientApp/generated",
+      "clean": {
+        "beforeRun": {
+          "cleanOutDir": true
+        }
+      },
+      "polyfills": [
+        "ie-polyfills.ts"
+      ],
+      "polyfillsChunkName": "ie-polyfills.min",
+      "bundlesHash": false,
+      "publicPath": "/",
+      "skip": true,
+      "envOverrides": {
+        "generate": {
+          "skip": false
+        }
+      }
+    },
     {
       "name": "browser-app",
       "platformTarget": "web",
-      "srcDir": "samples/ng-config-aspnetcore-sample/ClientApp/src",
+      "srcDir": "samples/ng-config-aspnetcore-sample/ClientApp",
       "outDir": "samples/ng-config-aspnetcore-sample/wwwroot",
-
       "entry": "main.browser.ts",
       "tsconfig": "tsconfig.browser.json",
-
       "copy": [
-        "favicon.ico"
+        "favicon.ico",
+        "generated/ie-polyfills.min.js"
       ],
-
       "polyfills": [
         "core-js/es6/reflect",
         "core-js/es7/reflect",
-        "zone.js/dist/zone"
+        "polyfills.ts"
       ],
-
       "publicPath": "/",
       "baseHref": "~/",
-
       "htmlInject": {
-        "baseHrefOut": "../Views/Shared/_BaseHrefPartial.cshtml",
-        "scriptsOut": "../Views/Shared/_ScriptsPartial.cshtml",
-        "stylesOut": "../Views/Shared/_StylesPartial.cshtml",
-        "iconsOut": "../Views/Shared/_FaviconsPartial.cshtml",
-        "resourceHintsOut": "../Views/Shared/_ResourceHintsPartial.cshtml",
-
+        "resourceHints": true,
+        "baseHrefOut": "../Views/Shared/_BaseHref.generated.cshtml",
+        "iconsOut": "../Views/Shared/_Favicons.generated.cshtml",
+        "resourceHintsOut": "../Views/Shared/_ResourceHints.generated.cshtml",
+        "runtimeInlineOut": "../Views/Shared/_Runtime.generated.cshtml",
+        "stylesOut": "../Views/Shared/_Styles.generated.cshtml",
+        "scriptsOut": "../Views/Shared/_Scripts.generated.cshtml",
         "customAttributes": {
           "asp-append-version": "true"
         }
       },
+      //"vendorChunk": true,
+      "environmentVariables": {
+        "aiInstrumentationKey": "process.env.NG_LOGGING_DEMO_APP_INSIGHTS_KEY"
+      },
       "envOverrides": {
+        "analyze": {
+          "bundleAnalyzer": {
+            "openAnalyzer": true
+          },
+          // "stats": {
+          //   "modules": true,
+          //   "chunks": true,
+          //   "chunkModules": true,
+          //   "entrypoints": true,
+          //   "excludeModules": "node_modules"
+          // },
+          "concatenateModules": false
+        },
         "prod": {
           "clean": {
             "beforeRun": {
-              "cleanOutDir": true
-            }
+              "cleanOutDir": true,
+              "paths": [
+                "../ClientApp/.bo-cache/"
+              ]
+            },
+            "allowOutsideOutputDir": true
           },
-
-          //"entry": "main.browser.prod.ts",
-          
+          "bundlesHash": false,
+          "chunksHash": false,
+          "moduleRoots": [
+            "dist/packages"
+          ],
           "moduleReplacements": [
             {
               "resourcePath": "./environments/environment.ts",
               "newResourcePath": "./environments/environment.prod.ts"
             }
           ]
+        },
+        "aot": {
+          "polyfills": [
+            "polyfills.ts"
+          ]
         }
       }
     }
-  ],
-
-  "logLevel": "debug"
+  ]
+  //"logLevel": "debug"
 }

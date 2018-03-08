@@ -1,34 +1,25 @@
-﻿import { Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 
 import { ConfigLoader } from '@bizappframework/ng-config';
 
-import { ConfigState } from './config-state';
 import * as configActions from './config.actions';
 
 export class ConfigNgrxStoreLoaderWrapper implements ConfigLoader {
-    constructor(private readonly _store: Store<ConfigState>, private readonly _configLoader: ConfigLoader) {
-        if (!this._store) {
-            throw new Error(`'Store<ConfigState>' service is not available.`);
-        }
-        if (!this._configLoader) {
-            throw new Error(`'configLoader' service is not available.`);
-        }
-    }
+    // tslint:disable-next-line:no-any
+    constructor(private readonly _store: Store<any>, private readonly _configLoader: ConfigLoader) { }
 
     source(): string {
-        return 'ConfigNgrxStoreLoader';
+        return 'NgrxStoreLoader';
     }
 
-    load(): Promise<{ [key: string]: any }> {
+    // tslint:disable-next-line:no-any
+    async load(): Promise<{ [key: string]: any }> {
+        this._store.dispatch(new configActions.Load(this._configLoader.source()));
+
         return this._configLoader.load()
-            .then((data: { [key: string]: any; }) => {
-                const source = this._configLoader.source();
-                const action = new configActions.Load({
-                    data: data,
-                    loaded: true,
-                    source: source
-                });
-                this._store.dispatch(action);
+            .then(data => {
+                this._store.dispatch(new configActions.LoadSuccess(data));
+
                 return data;
             });
     }

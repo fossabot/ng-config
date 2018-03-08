@@ -18,9 +18,9 @@ describe('ng-config',
 
         describe('ConfigLoader',
             () => {
-                it(`should be able to provide 'ConfigStaticLoader' instance`,
+                it("should be able to provide 'ConfigStaticLoader' instance",
                     () => {
-                        const configService = TestBed.get(ConfigService) as ConfigService;
+                        const configService = TestBed.get(ConfigService);
 
                         expect(ConfigStaticLoader).toBeDefined();
                         expect(configService.loader).toBeDefined();

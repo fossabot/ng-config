@@ -11,6 +11,7 @@ export class AppComponent {
 
     get configJson(): string {
         const config = this._configService.getSettings();
+
         return JSON.stringify(config, null, 2);
     }
 }

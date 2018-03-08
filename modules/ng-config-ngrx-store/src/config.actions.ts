@@ -1,22 +1,25 @@
-﻿import { Action } from '@ngrx/store';
-
-import { ConfigState } from './config-state';
+import { Action } from '@ngrx/store';
 
 export enum ConfigActionTypes {
     Load = '[Config] Load',
-    Reload = '[Config] Reload'
+    LoadSuccess = '[Config] Load Success',
 }
 
 export class Load implements Action {
+    // tslint:disable-next-line:no-reserved-keywords
     readonly type = ConfigActionTypes.Load;
 
-    constructor(public payload: ConfigState) { }
+    constructor(public source: string) { }
 }
 
-export class Reload implements Action {
-    readonly type = ConfigActionTypes.Reload;
+export class LoadSuccess implements Action {
+    // tslint:disable-next-line:no-reserved-keywords
+    readonly type = ConfigActionTypes.LoadSuccess;
 
-    constructor(public payload: ConfigState) { }
+    // tslint:disable-next-line:no-any
+    constructor(public payload: { [key: string]: any }) { }
 }
 
-export type ConfigActions = Load | Reload;
+export type ConfigActions =
+    | Load
+    | LoadSuccess;

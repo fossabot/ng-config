@@ -1,14 +1,11 @@
 {
   "extends": "./tsconfig.json",
   "exclude": [
-    "main.server.ts",
-    "main.server.prod.ts"
+    "main.browser.ts",
+    "main.browser.prod.ts"
   ],
   "angularCompilerOptions": {
     "preserveWhitespaces": false,
-    "exclude": [
-      "main.server.ts",
-      "main.server.prod.ts"
-    ]
+    "entryModule": "./app/app.server.module#AppModule"    
   }
 }

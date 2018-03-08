@@ -1,2 +1,1 @@
-﻿export { ConfigHttpLoader } from './src/config.http-loader';
-
+ export { ConfigHttpLoader } from './src/config.http-loader';

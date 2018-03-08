@@ -1,4 +1,4 @@
-﻿{
+{
   "extends": "../tsconfig-build.json",
 
   "compilerOptions": {
@@ -12,6 +12,8 @@
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
+    "skipTemplateCodegen": true,
+    "fullTemplateTypeCheck": true,
     "flatModuleOutFile": "index.js",
     "flatModuleId": "@bizappframework/ng-config"
   }
