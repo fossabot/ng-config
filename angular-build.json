@@ -6,6 +6,7 @@
       "srcDir": "modules/ng-config",
       "outDir": "dist/packages/ng-config",
       "libraryName": "baf.ngConfig",
+
       "tsTranspilation": {
         "tsconfig": "tsconfig-build.json",
         "copyTemplateAndStyleUrls": false,
@@ -59,6 +60,7 @@
       "srcDir": "modules/ng-config/http-loader",
       "outDir": "dist/packages/ng-config",
       "libraryName": "baf.ngConfig.httpLoader",
+
       "externals": {
         "@bizappframework/ng-config": "baf.ngConfig"
       },
@@ -74,12 +76,6 @@
       },
       "envOverrides": {
         "prod": {
-          "copy": [
-            {
-              "from": "../../../dist/packages/ng-config",
-              "to": "../../../node_modules/@bizappframework/ng-config"
-            }
-          ],
           "banner": "../../banner.txt",
           "bundles": [
             {
@@ -116,6 +112,7 @@
       "srcDir": "modules/ng-config-ngrx-store",
       "outDir": "dist/packages/ng-config-ngrx-store",
       "libraryName": "baf.ngConfig.ngrxStore",
+
       "externals": {
         "@ngrx/store": "ngrx.store",
         "@ngrx/effects": "ngrx.effects",
