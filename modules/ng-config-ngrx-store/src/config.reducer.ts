@@ -15,14 +15,26 @@ export function configReducer(state: ConfigState = initialState, action: ConfigA
                 return {
                     ...state,
                     source: action.source,
-                    loading: true
+                    loading: true,
+                    loaded: false
+                };
+            }
+        case ConfigActionTypes.LoaderLoaded:
+            {
+                return {
+                    ...state,
+                    data: { ...state.data, ...action.payload.data },
+                    source: action.payload.source,
+                    loading: true,
+                    loaded: false
                 };
             }
         case ConfigActionTypes.LoadSuccess:
             {
                 return {
                     ...state,
-                    data: { ...action.payload },
+                    data: { ...action.payload.data },
+                    source: action.payload.source,
                     loading: false,
                     loaded: true
                 };

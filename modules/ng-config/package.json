@@ -2,7 +2,14 @@
   "name": "@bizappframework/ng-config",
   "version": "0.0.0",
   "description": "Contains configuration service libraries for Angular app.",
-  "keywords": [],
+  "keywords": [
+    "angular",
+    "config",
+    "configuration",
+    "settings",
+    "angular-app-settings-service",
+    "angular-app-config-service"
+  ],
   "author": "",
   "license": "",
   "repository": "",
@@ -10,7 +17,8 @@
     "tslib": "^1.9.0"
   },
   "peerDependencies": {
+    "@angular/common": ">=5.0.0",
     "@angular/core": ">=5.0.0",
-    "@angular/common": ">=5.0.0"
+    "rxjs": ">=5.5.0"
   }
 }

@@ -5,9 +5,10 @@
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "@bizappframework/ng-config": [ "../../dist/packages/ng-config" ]
+      "@bizappframework/ng-config": [ "../../dist/packages/ng-config" ],
+      "@bizappframework/ng-config/http-loader": [ "../../dist/packages/ng-config/http-loader" ]
     },
-    "outDir": "../../dist/packages/ng-config-ngrx-store"
+    "outDir": "../../dist/packages/ng-config-cache-http-loader"
   },
   "files": [
     "public_api.ts"
@@ -18,6 +19,6 @@
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "@bizappframework/ng-config-ngrx-store"
+    "flatModuleId": "@bizappframework/ng-config-cache-http-loader"
   }
 }

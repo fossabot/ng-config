@@ -12,15 +12,15 @@
       "dom"
     ],
 
-    "outDir": "./dist/out-tsc",
+    "outDir": "../out-tsc",
     "baseUrl": ".",
     // "rootDir": ".",
 
     "paths": {
-      "@bizappframework/ng-config": [ "../../../modules/ng-config" ],
-      "@bizappframework/ng-config/http-loader": [ "../../../modules/ng-config/http-loader" ],
-      "@bizappframework/ng-config-cache-http-loader": [ "../../../modules/ng-config-cache-http-loader" ],
-      "@bizappframework/ng-config-ngrx-store": [ "../../../modules/ng-config-ngrx-store" ],
+      "@bizappframework/ng-config": [ "../../../dist/packages/ng-config" ],
+      "@bizappframework/ng-config/http-loader": [ "../../../dist/packages/ng-config/http-loader" ],
+      "@bizappframework/ng-config-cache-http-loader": [ "../../../dist/packages/ng-config-cache-http-loader" ],
+      "@bizappframework/ng-config-ngrx-store": [ "../../../dist/packages/ng-config-ngrx-store" ],
 
       "app/*": [ "./app/*" ],
       "environments/*": [ "./environments/*" ]

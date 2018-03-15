@@ -11,6 +11,7 @@ Packages
 ---------------
 
 [@bizappframework/ng-config](https://www.npmjs.com/package/@bizappframework/ng-config)  
+[@bizappframework/ng-config-cache-http-loader](https://www.npmjs.com/package/@bizappframework/ng-config-cache-http-loader)  
 [@bizappframework/ng-config-ngrx-store](https://www.npmjs.com/package/@bizappframework/ng-config-ngrx-store)
 
 Example

@@ -1,13 +1,13 @@
-ng-config
+ng-config-cache-http-loader
 =====================
 
-Contains configuration service libraries for Angular app.
+Contains config cache http loader for @bizappframework/ng-config.
 
 Installation
 ---------------
 
 ```
-npm install @bizappframework/ng-config
+npm install @bizappframework/ng-config-cache-http-loader
 ```
 
 Example

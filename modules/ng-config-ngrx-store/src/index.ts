@@ -1,4 +1,3 @@
- export * from './config.actions';
-export * from './config.ngrx-store-loader-wrapper';
-export { configReducer, getConfigData, getConfigLoaded } from './config.reducer';
-export * from './config-state';
+export { ConfigNgrxStoreModule } from './config-ngrx-store.module';
+export { getConfigData, getConfigLoaded } from './config.reducer';
+export { ConfigState } from './config-state';

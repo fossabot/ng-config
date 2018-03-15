@@ -1,3 +1,5 @@
+/* tslint:disable:no-console */
+
 import { ActionReducer, ActionReducerMap, MetaReducer } from '@ngrx/store';
 
 /**
@@ -18,12 +20,25 @@ export const reducers: ActionReducerMap<State> = {};
 export function logger(reducer: ActionReducer<State>): ActionReducer<State> {
     // tslint:disable-next-line:no-any
     return (state: State, action: any): State => {
-        // tslint:disable-next-line:no-console
-        console.log('state', state);
-        // tslint:disable-next-line:no-console
-        console.log('action', action);
+        try {
+            console.group(action.type);
+        } catch (e) {
+            console.log(action.type);
+        }
 
-        return reducer(state, action);
+        const nextState = reducer(state, action);
+
+        console.log('%c prev state', 'color: #9E9E9E; font-weight: bold', state);
+        console.log('%c action', 'color: #03A9F4; font-weight: bold', action);
+        console.log('%c next state', 'color: #4CAF50; font-weight: bold', nextState);
+
+        try {
+            console.groupEnd();
+        } catch (e) {
+            console.log('—— log end ——');
+        }
+
+        return nextState;
     };
 }
 

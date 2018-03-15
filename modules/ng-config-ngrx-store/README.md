@@ -3,9 +3,6 @@ ng-config-ngrx-store
 
 Contains ngrx-store wrapper for @bizappframework/ng-config.
 
-Getting started
----------------
-
 Installation
 ---------------
 

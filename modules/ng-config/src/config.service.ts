@@ -1,19 +1,82 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, Optional } from '@angular/core';
 
-import { ConfigLoader } from './config.loader';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+
+import { CONFIG_LOADER, ConfigLoader } from './config-loader';
+
+export interface ConfigLoadingContext {
+    // tslint:disable-next-line:no-any
+    data: { [key: string]: any };
+    source: string;
+    loadedSources: string[];
+    loading: boolean;
+    loaded: boolean;
+
+    loaderLoading?: boolean;
+    loaderLoaded?: boolean;
+    // tslint:disable-next-line:no-any
+    loaderLoadedData?: { [key: string]: any } | null;
+}
 
 @Injectable()
 export class ConfigService {
-    // tslint:disable-next-line:no-any
-    private _cachedSettings: { [key: string]: any };
+    readonly loadEvent: Observable<ConfigLoadingContext>;
 
-    constructor(public loader: ConfigLoader) { }
+    // tslint:disable-next-line:no-any
+    private _cachedSettings: { [key: string]: any } = {};
+    private _loadedSources: string[] = [];
+    private _onLoad = new Subject<ConfigLoadingContext>();
+
+    constructor(@Optional() @Inject(CONFIG_LOADER) private readonly _configLoaders?: ConfigLoader[]) {
+        this.loadEvent = this._onLoad.asObservable();
+    }
 
     // tslint:disable-next-line:no-any
     async load(): Promise<{ [key: string]: any }> {
-        return this.loader.load()
-            // tslint:disable-next-line:no-any
-            .then((data: { [key: string]: any }) => this._cachedSettings = data);
+        if (this._configLoaders && this._configLoaders.length) {
+            for (const loader of this._configLoaders) {
+                if (loader.source && this._loadedSources.includes(loader.source)) {
+                    continue;
+                }
+
+                this._onLoad.next({
+                    data: this._cachedSettings,
+                    loadedSources: this._loadedSources.slice(0),
+                    source: loader.source,
+                    loaderLoading: true,
+                    loaderLoaded: false,
+                    loading: true,
+                    loaded: false
+                });
+
+                const data = await loader.load();
+
+                this._cachedSettings = { ...this._cachedSettings, ...data };
+                this._loadedSources.push(loader.source);
+
+                this._onLoad.next({
+                    data: this._cachedSettings,
+                    loadedSources: this._loadedSources.slice(0),
+                    source: loader.source,
+                    loaderLoading: false,
+                    loaderLoaded: true,
+                    loaderLoadedData: { ...data },
+                    loading: true,
+                    loaded: false
+                });
+            }
+        }
+
+        this._onLoad.next({
+            data: this._cachedSettings,
+            loadedSources: this._loadedSources.slice(0),
+            source: this._loadedSources.join(', '),
+            loading: false,
+            loaded: true
+        });
+
+        return this._cachedSettings;
     }
 
     getSettings<T>(key: string, defaultValue?: T): T;
@@ -23,7 +86,7 @@ export class ConfigService {
 
     // tslint:disable-next-line:no-any
     getSettings(key?: string | string[], defaultValue?: any): any {
-        if (!this._cachedSettings || !key || (Array.isArray(key) && !key[0])) {
+        if (!key || (Array.isArray(key) && !key[0])) {
             return this._cachedSettings;
         }
 

@@ -1,13 +1,14 @@
 {
-  "name": "@bizappframework/ng-config-ngrx-store",
+  "name": "@bizappframework/ng-config-cache-http-loader",
   "version": "0.0.0",
-  "description": "Contains ngrx-store wrapper for @bizappframework/ng-config.",
+  "description": "Contains config cache http loader for @bizappframework/ng-config.",
   "keywords": [
     "angular",
     "config",
     "configuration",
     "settings",
-    "ngrx-store",
+    "cache",
+    "http-loader",
     "angular-app-settings-service",
     "angular-app-config-service"
   ],
@@ -18,9 +19,10 @@
     "tslib": "^1.9.0"
   },
   "peerDependencies": {
+    "@angular/common": ">=5.0.0",
     "@angular/core": ">=5.0.0",
+    "@bizappframework/ng-cache": ">=5.0.0-beta.2",
     "@bizappframework/ng-config": ">=5.0.0-beta.2",
-    "@ngrx/store": ">=5.0.0",
     "rxjs": ">=5.5.0"
   }
 }
