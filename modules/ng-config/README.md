@@ -1,12 +1,14 @@
 ng-config
 =====================
 
+[![npm version](https://badge.fury.io/js/%40bizappframework%2Fng-config.svg)](https://badge.fury.io/js/%40bizappframework%2Fng-config)
+
 Contains configuration service libraries for Angular app.
 
 Installation
 ---------------
 
-```
+```bash
 npm install @bizappframework/ng-config
 ```
 

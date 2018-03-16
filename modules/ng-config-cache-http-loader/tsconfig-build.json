@@ -1,14 +1,21 @@
 {
-  "extends": "../tsconfig-build.json",
-
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": ".",
+    "outDir": "../../dist/packages/ng-config-cache-http-loader",
+
+    // don't auto-discover @types/node, it results in a ///<reference in the .d.ts output
+    "types": [],
+
     "paths": {
-      "@bizappframework/ng-config": [ "../../dist/packages/ng-config" ],
-      "@bizappframework/ng-config/http-loader": [ "../../dist/packages/ng-config/http-loader" ]
-    },
-    "outDir": "../../dist/packages/ng-config-cache-http-loader"
+      "@bizappframework/ng-config": [
+        "../../dist/packages/ng-config"
+      ],
+      "@bizappframework/ng-config/http-loader": [
+        "../../dist/packages/ng-config/http-loader"
+      ]
+    }
   },
   "files": [
     "public_api.ts"

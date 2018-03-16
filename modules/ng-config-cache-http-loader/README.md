@@ -1,12 +1,14 @@
 ng-config-cache-http-loader
 =====================
 
+[![npm version](https://badge.fury.io/js/%40bizappframework%2Fng-config-cache-http-loader.svg)](https://badge.fury.io/js/%40bizappframework%2Fng-config-cache-http-loader)
+
 Contains config cache http loader for @bizappframework/ng-config.
 
 Installation
 ---------------
 
-```
+```bash
 npm install @bizappframework/ng-config-cache-http-loader
 ```
 

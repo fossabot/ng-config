@@ -4,10 +4,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": "../",
+    "outDir": "../../../dist/packages/ng-config",
+
     "paths": {
       "@bizappframework/ng-config": [ "../../../dist/packages/ng-config" ]
     },
-    "outDir": "../../../dist/packages/ng-config"
   },
   "files": [
     "public_api.ts"

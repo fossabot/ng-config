@@ -1,13 +1,18 @@
 {
-  "extends": "../tsconfig-build.json",
-
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": ".",
+    "outDir": "../../dist/packages/ng-config-ngrx-store",
+
+    // don't auto-discover @types/node, it results in a ///<reference in the .d.ts output
+    "types": [],
+
     "paths": {
-      "@bizappframework/ng-config": [ "../../dist/packages/ng-config" ]
-    },
-    "outDir": "../../dist/packages/ng-config-ngrx-store"
+      "@bizappframework/ng-config": [
+        "../../dist/packages/ng-config"
+      ]
+    }
   },
   "files": [
     "public_api.ts"

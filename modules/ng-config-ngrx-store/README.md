@@ -1,12 +1,14 @@
 ng-config-ngrx-store
 =====================
 
+[![npm version](https://badge.fury.io/js/%40bizappframework%2Fng-config-ngrx-store.svg)](https://badge.fury.io/js/%40bizappframework%2Fng-config-ngrx-store)
+
 Contains ngrx-store wrapper for @bizappframework/ng-config.
 
 Installation
 ---------------
 
-```
+```bash
 npm install @bizappframework/ng-config-ngrx-store
 ```
 

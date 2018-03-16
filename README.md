@@ -10,9 +10,17 @@ Contains configuration service modules for Angular app.
 Packages
 ---------------
 
-[@bizappframework/ng-config](https://www.npmjs.com/package/@bizappframework/ng-config)  
-[@bizappframework/ng-config-cache-http-loader](https://www.npmjs.com/package/@bizappframework/ng-config-cache-http-loader)  
-[@bizappframework/ng-config-ngrx-store](https://www.npmjs.com/package/@bizappframework/ng-config-ngrx-store)
+[@bizappframework/ng-config](https://www.npmjs.com/package/@bizappframework/ng-config) 
+[![npm version](https://badge.fury.io/js/%40bizappframework%2Fng-config.svg)](https://badge.fury.io/js/%40bizappframework%2Fng-config)  
+Contains configuration service libraries for Angular app.
+
+[@bizappframework/ng-config-cache-http-loader](https://www.npmjs.com/package/@bizappframework/ng-config-cache-http-loader) 
+[![npm version](https://badge.fury.io/js/%40bizappframework%2Fng-config-cache-http-loader.svg)](https://badge.fury.io/js/%40bizappframework%2Fng-config-cache-http-loader)  
+Contains config cache http loader for @bizappframework/ng-config.
+
+[@bizappframework/ng-config-ngrx-store](https://www.npmjs.com/package/@bizappframework/ng-config-ngrx-store) 
+[![npm version](https://badge.fury.io/js/%40bizappframework%2Fng-config-ngrx-store.svg)](https://badge.fury.io/js/%40bizappframework%2Fng-config-ngrx-store)  
+Contains ngrx-store wrapper for @bizappframework/ng-config.
 
 Example
 ---------------

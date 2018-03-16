@@ -3,18 +3,18 @@
   "compilerOptions": {
     "declaration": false,
     "sourceMap": true,
+
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noEmitOnError": true,
-    "types": [],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
 
-    "outDir": "./dist/out-tsc",
+    "noEmitOnError": true,
+
+    "types": [],
+
+    "lib": [ "es2017", "dom" ],
+
     "baseUrl": ".",
-    // "rootDir": ".",
+    "outDir": "../../../out-tsc",
 
     "paths": {
       "@bizappframework/ng-config": [ "../../../modules/ng-config" ],

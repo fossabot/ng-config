@@ -25,7 +25,6 @@
     <Content Include="ng-config-cache-http-loader\package.json" />
     <Content Include="ng-config-cache-http-loader\README.md" />
     <Content Include="ng-config-cache-http-loader\tsconfig-build.json" />
-    <Content Include="tsconfig-build.json" />
     <Content Include="ng-config\package.json" />
     <Content Include="ng-config\tsconfig-build.json" />
     <Content Include="ng-config\README.md" />
