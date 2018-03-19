@@ -13,23 +13,23 @@ import { configReducer } from './config.reducer';
 })
 export class ConfigNgrxStoreModule {
     constructor(@Optional() @SkipSelf() parentModule: ConfigNgrxStoreModule,
-        // tslint:disable-next-line:no-any
-        private readonly _store: Store<any>,
-        private readonly _ConfigService: ConfigService) {
+        store: Store<any>,
+        configService: ConfigService) {
         if (parentModule) {
             throw new Error('ConfigNgrxStoreModule has already been loaded, import in root module only.');
         }
-        this._ConfigService.loadEvent
+
+        configService.loadEvent
             .subscribe((evt) => {
                 if (evt.loading && evt.source && !evt.loaderLoaded) {
-                    this._store.dispatch(new configActions.Load(evt.source));
+                    store.dispatch(new configActions.Load(evt.source));
                 } else if (evt.loading && evt.source && evt.loaderLoaded) {
-                    this._store.dispatch(new configActions.LoaderLoaded({
+                    store.dispatch(new configActions.LoaderLoaded({
                         data: evt.loaderLoadedData || {},
                         source: evt.source
                     }));
                 } else if (evt.loaded) {
-                    this._store.dispatch(new configActions.LoadSuccess({
+                    store.dispatch(new configActions.LoadSuccess({
                         data: evt.data,
                         source: evt.source
                     }));

@@ -12,6 +12,48 @@ Installation
 npm install @bizappframework/ng-config
 ```
 
+
+Setup
+---------------
+
+```typescript
+import { ConfigModule, ConfigStaticLoaderModule } from '@bizappframework/ng-config';
+
+@NgModule({    
+    imports: [
+        // Other module imports
+
+        // Config
+        ConfigModule.loadWithAppInitializer(),
+        ConfigStaticLoaderModule.forRoot({ key1: 'value1' })
+    ]    
+})
+export class AppModule { }
+```
+
+Usage
+---------------
+
+```typescript
+import { Component } from '@angular/core';
+
+import { ConfigService } from '@bizappframework/ng-config';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {
+    constructor(private readonly _configService: ConfigService) {
+        const allSettings = this._configService.getSettings();
+        console.log('settings: ', allSettings);
+
+        const loggingSettings = this._configService.getSettings<LoggingOptions>('logging');
+        console.log('loggingSettings: ', loggingSettings);
+    }
+}
+```
+
 Example
 ---------------
 
