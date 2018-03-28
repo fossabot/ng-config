@@ -18,8 +18,8 @@
     "tslib": "^1.9.0"
   },
   "peerDependencies": {
-    "@angular/core": ">=5.0.0 <=6",
-    "@bizappframework/ng-config": ">=5.0.0-beta.5",
+    "@angular/core": "^5.0.0 | ^6.0.0-rc.0",
+    "@bizappframework/ng-config": ">=5.0.0-beta.6",
     "@ngrx/store": ">=5.0.0"
   }
 }
