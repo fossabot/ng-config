@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 import { ConfigService } from '@bizappframework/ng-config';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
+    selector: 'app-root',
+    templateUrl: './app.component.html'
 })
 export class AppComponent {
     constructor(private readonly _configService: ConfigService) { }

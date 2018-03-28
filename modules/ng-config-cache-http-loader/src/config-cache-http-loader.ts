@@ -15,7 +15,7 @@ export interface ConfigCacheHttpLoaderOptions {
     endpointUrl?: string | (() => string);
 }
 
-export const CONFIG_CACHE_HTTP_LOADER_OPTIONS = new InjectionToken<ConfigCacheHttpLoaderOptions>('CONFIG_CACHE_KEY');
+export const CONFIG_CACHE_HTTP_LOADER_OPTIONS = new InjectionToken<ConfigCacheHttpLoaderOptions>('CONFIG_CACHE_HTTP_LOADER_OPTIONS');
 
 @Injectable()
 export class ConfigCacheHttpLoader implements ConfigLoader {

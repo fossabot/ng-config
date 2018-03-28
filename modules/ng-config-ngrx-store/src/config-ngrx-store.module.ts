@@ -1,16 +1,10 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 
 import { ConfigService } from '@bizappframework/ng-config';
-import { Store, StoreModule } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 
 import * as configActions from './config.actions';
-import { configReducer } from './config.reducer';
-
-@NgModule({
-    imports: [
-        StoreModule.forFeature('config', configReducer)
-    ]
-})
+@NgModule()
 export class ConfigNgrxStoreModule {
     constructor(@Optional() @SkipSelf() parentModule: ConfigNgrxStoreModule,
         store: Store<any>,
