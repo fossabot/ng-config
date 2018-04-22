@@ -1,26 +1,23 @@
 {
-  "$schema": "./node_modules/@bizappframework/angular-build/schemas/schema-draft-04.json#",
+  "$schema": "./node_modules/@bizappframework/angular-build/schemas/schema.json#",
   "libs": [
     {
       "name": "ng-config",
-      "srcDir": "modules/ng-config",
-      "outDir": "dist/packages/ng-config",
+      "root": "modules/ng-config",
+      "outputPath": "dist/packages/ng-config",
       "libraryName": "baf.ngConfig",
-
       "tsTranspilation": {
-        "tsconfig": "tsconfig-build.json",
+        "tsConfig": "tsconfig-build.json",
         "copyTemplateAndStyleUrls": false,
         "inlineMetaDataResources": false
       },
-
       "packageOptions": {
         "packageJsonFile": "package.json"
       },
-
       "envOverrides": {
         "prod": {
           "clean": {
-            "beforeRun": {
+            "beforeBuild": {
               "cleanOutDir": true
             }
           },
@@ -34,20 +31,19 @@
               "entry": "index.js",
               "entryRoot": "tsOutDir",
               "libraryTarget": "es",
-              "outDir": "bundles"
-              //"outFileName": "[packagename].js"
+              "outputFilePath": "bundles/"
             },
             {
               "entryRoot": "prevBundleOutDir",
               "libraryTarget": "es",
-              "outDir": "bundles",
+              "outputFilePath": "bundles/",
               "transformScriptTargetOnly": true,
               "scriptTarget": "es5"
             },
             {
               "entryRoot": "prevBundleOutDir",
               "libraryTarget": "umd",
-              "outDir": "bundles"
+              "outputFilePath": "bundles/"
             }
           ],
           "packageOptions": {
@@ -59,26 +55,22 @@
     },
     {
       "name": "ng-config-http-loader",
-      "srcDir": "modules/ng-config/http-loader",
-      "outDir": "dist/packages/ng-config",
+      "root": "modules/ng-config/http-loader",
+      "outputPath": "dist/packages/ng-config",
       "libraryName": "baf.ngConfig.httpLoader",
-
       "externals": {
         "@bizappframework/ng-config": "baf.ngConfig"
       },
-
       "tsTranspilation": {
-        "tsconfig": "tsconfig-build.json",
+        "tsConfig": "tsconfig-build.json",
         "copyTemplateAndStyleUrls": false,
         "inlineMetaDataResources": false
       },
-
       "clean": {
-        "beforeRun": {
+        "beforeBuild": {
           "cleanOutDir": false
         }
       },
-
       "envOverrides": {
         "prod": {
           "banner": "../../banner.txt",
@@ -87,26 +79,24 @@
               "entry": "index.js",
               "entryRoot": "tsOutDir",
               "libraryTarget": "es",
-              "outDir": "bundles/[parentpackagename]"
-              //"outFileName": "[packagename].js"
+              "outputFilePath": "bundles/[parentpackagename].js"
             },
             {
               "entryRoot": "prevBundleOutDir",
               "libraryTarget": "es",
-              "outDir": "bundles/[parentpackagename]",
+              "outputFilePath": "bundles/[parentpackagename].js",
               "transformScriptTargetOnly": true,
               "scriptTarget": "es5"
             },
             {
               "entryRoot": "prevBundleOutDir",
               "libraryTarget": "umd",
-              "outDir": "bundles",
-              "outFileName": "[parentpackagename]-[packagename].umd.js"
+              "outputFilePath": "bundles/[parentpackagename]-[packagename].umd.js"
             }
           ],
           "packageOptions": {
             "packageJsonFile": "package.json",
-            "packageJsonFileOutDir": "[packagename]",
+            "packageJsonOutputFilePath": "[packagename]/package.json",
             "reExportTypingsAndMetaDataAs": "[packagename]"
           }
         }
@@ -114,30 +104,26 @@
     },
     {
       "name": "ng-config-cache-http-loader",
-      "srcDir": "modules/ng-config-cache-http-loader",
-      "outDir": "dist/packages/ng-config-cache-http-loader",
+      "root": "modules/ng-config-cache-http-loader",
+      "outputPath": "dist/packages/ng-config-cache-http-loader",
       "libraryName": "baf.ngConfig.cacheHttpLoader",
-
       "externals": {
         "@bizappframework/ng-cache": "baf.ngCache",
         "@bizappframework/ng-config": "baf.ngConfig",
         "@bizappframework/ng-config/http-loader": "baf.ngConfig.httpLoader"
       },
-
       "tsTranspilation": {
-        "tsconfig": "tsconfig-build.json",
+        "tsConfig": "tsconfig-build.json",
         "copyTemplateAndStyleUrls": false,
         "inlineMetaDataResources": false
       },
-
       "packageOptions": {
         "packageJsonFile": "package.json"
       },
-
       "envOverrides": {
         "prod": {
           "clean": {
-            "beforeRun": {
+            "beforeBuild": {
               "cleanOutDir": true
             }
           },
@@ -151,20 +137,19 @@
               "entry": "index.js",
               "entryRoot": "tsOutDir",
               "libraryTarget": "es",
-              "outDir": "bundles"
-              //"outFileName": "[packagename].js"
+              "outputFilePath": "bundles/"
             },
             {
               "entryRoot": "prevBundleOutDir",
               "libraryTarget": "es",
-              "outDir": "bundles",
+              "outputFilePath": "bundles/",
               "transformScriptTargetOnly": true,
               "scriptTarget": "es5"
             },
             {
               "entryRoot": "prevBundleOutDir",
               "libraryTarget": "umd",
-              "outDir": "bundles"
+              "outputFilePath": "bundles/"
             }
           ],
           "packageOptions": {
@@ -176,10 +161,9 @@
     },
     {
       "name": "ng-config-ngrx-store",
-      "srcDir": "modules/ng-config-ngrx-store",
-      "outDir": "dist/packages/ng-config-ngrx-store",
+      "root": "modules/ng-config-ngrx-store",
+      "outputPath": "dist/packages/ng-config-ngrx-store",
       "libraryName": "baf.ngConfig.ngrxStore",
-
       "externals": {
         "@ngrx/store": "ngrx.store",
         "@ngrx/effects": "ngrx.effects",
@@ -188,21 +172,18 @@
         "@ngrx/store-devtools": "ngrx.storeDevtools",
         "@bizappframework/ng-config": "baf.ngConfig"
       },
-
       "tsTranspilation": {
-        "tsconfig": "tsconfig-build.json",
+        "tsConfig": "tsconfig-build.json",
         "copyTemplateAndStyleUrls": false,
         "inlineMetaDataResources": false
       },
-
       "packageOptions": {
         "packageJsonFile": "package.json"
       },
-
       "envOverrides": {
         "prod": {
           "clean": {
-            "beforeRun": {
+            "beforeBuild": {
               "cleanOutDir": true
             }
           },
@@ -216,20 +197,19 @@
               "entry": "index.js",
               "entryRoot": "tsOutDir",
               "libraryTarget": "es",
-              "outDir": "bundles"
-              //"outFileName": "[packagename].js"
+              "outputFilePath": "bundles/"
             },
             {
               "entryRoot": "prevBundleOutDir",
               "libraryTarget": "es",
-              "outDir": "bundles",
+              "outputFilePath": "bundles/",
               "transformScriptTargetOnly": true,
               "scriptTarget": "es5"
             },
             {
               "entryRoot": "prevBundleOutDir",
               "libraryTarget": "umd",
-              "outDir": "bundles"
+              "outputFilePath": "bundles/"
             }
           ],
           "packageOptions": {
@@ -240,15 +220,14 @@
       }
     }
   ],
-   "apps": [
+  "apps": [
     {
       "name": "generate",
       "platformTarget": "web",
-      "srcDir": "samples/ng-config-aspnetcore-sample/ClientApp",
-      "outDir": "samples/ng-config-aspnetcore-sample/ClientApp/generated",
-
+      "root": "samples/ng-config-aspnetcore-sample/ClientApp",
+      "outputPath": "samples/ng-config-aspnetcore-sample/ClientApp/generated",
       "clean": {
-        "beforeRun": {
+        "beforeBuild": {
           "cleanOutDir": true
         }
       },
@@ -256,7 +235,9 @@
         "ie-polyfills.ts"
       ],
       "polyfillsChunkName": "ie-polyfills.min",
-      "bundlesHash": false,
+      "outputHashing": {
+        "bundles": false
+      },
       "publicPath": "/",
       "skip": true,
       "envOverrides": {
@@ -268,23 +249,19 @@
     {
       "name": "browser-app",
       "platformTarget": "web",
-      "srcDir": "samples/ng-config-aspnetcore-sample/ClientApp",
-      "outDir": "samples/ng-config-aspnetcore-sample/wwwroot",
-
+      "root": "samples/ng-config-aspnetcore-sample/ClientApp",
+      "outputPath": "samples/ng-config-aspnetcore-sample/wwwroot",
       "entry": "main.browser.ts",
-      "tsconfig": "tsconfig.json",
-
+      "tsConfig": "tsconfig.json",
       "copy": [
         "favicon.ico",
         "generated/ie-polyfills.min.js"
       ],
-
       "polyfills": [
         "core-js/es6/reflect",
         "core-js/es7/reflect",
         "polyfills.ts"
       ],
-
       "publicPath": "/",
       "baseHref": "~/",
       "htmlInject": {
@@ -299,47 +276,36 @@
           "asp-append-version": "true"
         }
       },
-
       "envOverrides": {
         "analyze": {
           "bundleAnalyzer": {
             "openAnalyzer": true
           },
-          // "stats": {
-          //   "modules": true,
-          //   "chunks": true,
-          //   "chunkModules": true,
-          //   "entrypoints": true,
-          //   "excludeModules": "node_modules"
-          // },
           "concatenateModules": false
         },
-
         "prod": {
           "clean": {
-            "beforeRun": {
+            "beforeBuild": {
               "cleanOutDir": true,
               "paths": [
                 "../ClientApp/.bo-cache/"
               ]
             },
-            "allowOutsideOutputDir": true
+            "allowOutsideOutDir": true
           },
-
-          "bundlesHash": false,
-          "chunksHash": false,
-
-          "moduleReplacements": [
+          "outputHashing": {
+            "bundles": false,
+            "chunks": false
+          },
+          "fileReplacements": [
             {
-              "resourcePath": "./environments/environment.ts",
-              "newResourcePath": "./environments/environment.prod.ts"
+              "src": "./environments/environment.ts",
+              "replaceWith": "./environments/environment.prod.ts"
             }
           ]
         },
-
         "aot": {
-          "tsconfig": "tsconfig.aot.json",
-
+          "tsConfig": "tsconfig.aot.json",
           "polyfills": [
             "polyfills.ts"
           ]
@@ -347,5 +313,4 @@
       }
     }
   ]
-  //"logLevel": "debug"
 }

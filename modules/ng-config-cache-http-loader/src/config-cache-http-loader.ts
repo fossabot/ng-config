@@ -5,7 +5,7 @@ import { Inject, Injectable, InjectionToken, Optional, PLATFORM_ID } from '@angu
 import { CacheEntryOptions, CacheService, handleCacheResponse } from '@bizappframework/ng-cache';
 import { CONFIG_STATIC_DATA, ConfigLoader, ConfigStaticData } from '@bizappframework/ng-config';
 import { CONFIG_ENDPOINT_URL } from '@bizappframework/ng-config/http-loader';
-import { of } from 'rxjs/observable/of';
+import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export interface ConfigCacheHttpLoaderOptions {

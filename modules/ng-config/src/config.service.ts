@@ -1,7 +1,6 @@
 import { Inject, Injectable, Optional } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Observable, Subject } from 'rxjs';
 
 import { CONFIG_LOADER, ConfigLoader } from './config-loader';
 

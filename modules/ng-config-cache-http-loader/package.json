@@ -19,9 +19,9 @@
     "tslib": "^1.9.0"
   },
   "peerDependencies": {
-    "@angular/common": "^5.0.0 | ^6.0.0-rc.0",
-    "@angular/core": "^5.0.0 | ^6.0.0-rc.0",
-    "@bizappframework/ng-cache": ">=5.0.0-beta.6",
-    "@bizappframework/ng-config": ">=5.0.0-beta.6"
+    "@angular/common": "^6.0.0-rc.0",
+    "@angular/core": "^6.0.0-rc.0",
+    "@bizappframework/ng-cache": "^6.0.0-beta.0",
+    "@bizappframework/ng-config": "^6.0.0-beta.0"
   }
 }
